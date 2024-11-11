@@ -1,0 +1,20 @@
+@import "./scss/reset";
+@import "./scss/variable";
+@import "./scss/mixins";
+
+@import "./components/Header/Header.scss";
+@import "./components//Main/Main.scss";
+@import "./components/Navbar/Navbar.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&display=swap");
+
+body {
+  font-family: "Concert One", cursive;
+  background-color: $backgroundColor;
+}
+
+p {
+  font-family: "Noto Sans", sans-serif;
+}
