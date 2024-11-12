@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from "react";
 
 //* ==================== HOOKS ===============================
 //! Hook'lar fonksiyonel component'ler icerisinde state'leri kullanmamiza olanak saglayan özel fonksiyonlardir.
@@ -15,9 +15,43 @@ import React from 'react'
 //* =============================================================
 
 const Hooks = () => {
-  return (
-    <div>Hooks</div>
-  )
-}
+  //! usestate hook'u her zaman en tepeye yazilmali
+  const [sayac, setSayac] = useState(0);
+  // let sayac = 0;
 
-export default Hooks
+  const arttir = () => {
+    setSayac(sayac + 1);
+    // sayac = sayac + 1;
+  };
+  return (
+    <div>
+      <h2>****************************</h2>
+      <h2>****************************</h2>
+      <h1>USESTATE</h1>
+
+      <h2>COUNT:{sayac}</h2>
+
+      <button onClick={arttir} className="btn btn-primary">
+        ARTTIR
+      </button>
+
+      <button onClick={() => setSayac(sayac - 1)} className="btn btn-info">
+        AZALT
+      </button>
+
+      <h1>**********************************</h1>
+
+      <div>
+        <h1>OBJECT İLE USESTATE KULLANIMI </h1>
+        <h2 className="text-danger"> </h2>
+        <h3 className="text-primary"></h3>
+        <h5 className="text-success"></h5>
+
+        <button className="btn m-4 p-4">ToggleDEĞİŞTİR</button>
+        <button className="btn m-4 p-4">İsimDEĞİŞTİR</button>
+      </div>
+    </div>
+  );
+};
+
+export default Hooks;
