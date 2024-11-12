@@ -25,6 +25,11 @@ const Events = () => {
     document.querySelector(".btn-danger").textContent = "TIKLANDI";
   };
 
+  //? Bir componentin return kismi 3 farkli yöntem ile yeniden render edilir.
+  //? 1- Herhangi bir state degisirse
+  //? 2- Props degisirse
+  //? 3- Refresh force edilirse (tercih edilen bir durum olmaz)
+
   return (
     //! jsx(react) alani
 
