@@ -3,7 +3,15 @@ import "./Msg.css"
 
 const Msg = () => {
   return (
-    <div>Msg</div>
+    <div>
+        <h2>MSG ALANI</h2>
+
+        <p>hosgeldin react</p>
+
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+    </div>
   )
 }
 
