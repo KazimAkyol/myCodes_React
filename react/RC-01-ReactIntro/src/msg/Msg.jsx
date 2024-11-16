@@ -1,5 +1,5 @@
-import React from 'react'
-import "./Msg.css";
+
+import "./Msg.css"
 
 const Msg = () => {
   return (
