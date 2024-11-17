@@ -1,4 +1,4 @@
- const data = [
+const data = [
   {
     id: 1,
     name: "HTML",
@@ -19,4 +19,4 @@
   },
 ];
 
- export default data;
+export default data;
