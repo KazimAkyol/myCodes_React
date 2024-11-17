@@ -1,8 +1,8 @@
 import React from "react";
-
 import "./Card.scss";
 
 const Card = ({ veri }) => {
+  // console.log(props);
   console.log(veri);
 
   //! react alanında (ekrana basarken) döngü olarak sadece map desteklenir,condition'lardan da sadece ternary desteklenir.
