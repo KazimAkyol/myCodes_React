@@ -17,7 +17,7 @@ function App() {
   return (
     <div>
       <Person kisi={people[0]} />
-      {/* <Person kisi={people[1]} /> */}
+      <Person kisi={people[1]} />
     </div>
   );
 }
