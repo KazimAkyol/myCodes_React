@@ -1,11 +1,18 @@
 import React from "react";
 
-const Message = (props) => {
-  console.log(props); // props.isim
+//!1.yol
+// const Message = (props) => {
+
+//    console.log(props);//props.isim
+
+//    //!destructuring
+//  const{isim,telefon}= props
+
+const Message = ({ isim, telefon }) => {
   return (
     <div>
       <h1 style={{ color: "red" }}>
-        Benim adim {props.isim} telefon numaram {props.telefon}
+        Benim adim {isim} telefon numaram {telefon}
       </h1>
     </div>
   );
