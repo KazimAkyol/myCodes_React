@@ -1,28 +1,33 @@
-import React from "react";
+import React from 'react'
 
-const Card = ({ veri }) => {
-  // console.log(props);
-  console.log(veri);
-  //! react alanında (ekrana basarken) döngü olarak sadece map desteklenir,condition lardan da sadece ternary desteklenir
+const Card = ({veri}) => {
 
-  //!map döngüsü kullanılan her projede map ten sonraki ilk etikete key={id} yazılır
+    console.log(veri)
 
   return (
     <div>
-      {veri.map((a) => (
-        <div key={a.id}>
-          <h1> {a.name}</h1>
-          <h2>{a.job} </h2>
-          <p>{a.comment} </p>
-          <img src={a.img} alt="user" />
-          <div>
-            <button className="buton-div--small">Small</button>
-            <button className="buton-div--small">Large</button>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
 
-export default Card;
+    
+        <h1>
+
+        </h1>
+
+        <h2>
+
+        </h2>
+
+        <p>
+
+        </p>
+
+        <img src="" alt="" />
+
+        <div>
+            <button>Small</button>
+            <button>Large</button>
+        </div>
+    </div>
+  )
+}
+
+export default Card
