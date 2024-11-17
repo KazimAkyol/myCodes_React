@@ -1,17 +1,19 @@
-import React from 'react'
+import React from "react";
 import "./App.scss";
-import Card from './components/card/Card';
-import dataA from "./data"
+import Card from "./components/card/Card";
+import dataA from "./data";
+import Header from "./components/header/Header";
 
 const App = () => {
-
-    // console.log(dataA);
+  // console.log(dataA);
 
   return (
     <div>
-        <Card veri={dataA} />
-    </div>
-  )
-}
+      <Header />
 
-export default App
+      <Card veri={dataA} />
+    </div>
+  );
+};
+
+export default App;
