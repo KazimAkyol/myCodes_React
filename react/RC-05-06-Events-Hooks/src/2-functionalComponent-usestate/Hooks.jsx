@@ -86,7 +86,33 @@ const Hooks = () => {
         {kisi.renk === "blue" && <Events />}
         {/* kisi.renk===blue iken Events comp basılsın dedim. bunu yapmak istiyorsam App.js deki Events'i yoruma almalıyım. */}
 
-        <button className="btn m-4 p-4">İsimDEĞİŞTİR</button>
+        {/* <button
+          onClick={() =>
+            setKisi({
+              isim: "fatma",
+              meslek: "developer",
+              yas: 34,
+              renk: "red",
+            })
+          }
+          style={{ backgroundColor: kisi.renk }}
+          className="btn m-4 p-4"
+        >
+          İsimDEĞİŞTİR
+        </button> */}
+
+        <button
+          onClick={() =>
+            setKisi({
+              ...kisi,
+              isim: "fatma",
+            })
+          }
+          style={{ backgroundColor: kisi.renk }}
+          className="btn m-4 p-4"
+        >
+          İsimDEĞİŞTİR
+        </button>
       </div>
     </div>
   );

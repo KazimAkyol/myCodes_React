@@ -9,9 +9,9 @@ function App() {
     <div>
       {/* <Events /> */}
 
-      {/* <Hooks /> */}
+      <Hooks />
 
-      <Form />
+      {/* <Form /> */}
     </div>
   );
 }
