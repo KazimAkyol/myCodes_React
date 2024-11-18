@@ -10,11 +10,11 @@ function App() {
     <div>
       {/* <Events /> */}
 
-      {/* <Hooks /> */}
+      <Hooks />
 
       {/* <Form /> */}
 
-      <Counter />
+      {/* <Counter /> */}
     </div>
   );
 }
