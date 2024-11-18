@@ -106,12 +106,20 @@ const Hooks = () => {
             setKisi({
               ...kisi,
               isim: "fatma",
+              renk: "aqua",
             })
           }
           style={{ backgroundColor: kisi.renk }}
           className="btn m-4 p-4"
         >
           İsimDEĞİŞTİR
+        </button>
+
+        <button
+          onClick={() => setKisi({ ...kisi, yas: 50 })}
+          className="btn btn-secondary"
+        >
+          yasDegistir
         </button>
       </div>
     </div>

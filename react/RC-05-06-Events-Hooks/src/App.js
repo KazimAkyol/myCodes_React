@@ -1,4 +1,5 @@
 import Events from "./1-events-hooksintro/Events";
+import Counter from "./2-classComponent-state/Counter";
 import Hooks from "./2-functionalComponent-usestate/Hooks";
 import Form from "./3-form/Form";
 import "./App.css";
@@ -9,9 +10,11 @@ function App() {
     <div>
       {/* <Events /> */}
 
-      <Hooks />
+      {/* <Hooks /> */}
 
       {/* <Form /> */}
+
+      <Counter />
     </div>
   );
 }
