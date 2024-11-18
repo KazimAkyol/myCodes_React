@@ -1,7 +1,12 @@
 @import "../../scss/variable";
+@import "../../scss/mixins";
 
 .card-container {
-  background-color: red;
+  background-color: orange;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
 
   .card {
     width: 500px;
@@ -15,8 +20,8 @@
     }
 
     .desc {
-      color: $secondaryColor;
       background-color: rgba(0, 0, 0, 0.8);
+      color: $secondaryColor;
       padding: 1rem;
       border-radius: 10px;
       text-align: justify;
@@ -26,8 +31,16 @@
       position: absolute;
       bottom: 0;
       left: 0;
+
       transform: translateY(100%);
       transition: transform 0.7s ease-in-out;
+
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        // desc'daki scroll bar görünmesin
+        display: none;
+      }
     }
 
     img {
@@ -62,5 +75,17 @@
       padding: 1rem;
       border-radius: 10px;
     }
+  }
+}
+
+@include media-xsm {
+  .card-container {
+    flex-direction: column;
+  }
+}
+
+@include media-lg {
+  .card-container {
+    flex-direction: row;
   }
 }
