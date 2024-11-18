@@ -1,9 +1,28 @@
-import React from 'react'
+import React from "react";
 
-const Card = () => {
+// const Card = ({ hrscp }) => {
+// console.log(hrscp);
+
+//   const { title, image, date, desc } = hrscp;
+
+const Card = ({ id, title, date, image, desc }) => {
   return (
-    <div>Card</div>
-  )
-}
+    <div>
+      <div>
+        <h1>{title}</h1>
+      </div>
 
-export default Card
+      <div>
+        <h1>{date}</h1>
+      </div>
+
+      <img src={image} alt="" />
+
+      <div>
+        <p>{desc}</p>
+      </div>
+    </div>
+  );
+};
+
+export default Card;
