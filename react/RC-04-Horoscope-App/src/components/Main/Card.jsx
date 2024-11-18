@@ -5,20 +5,20 @@ import React from "react";
 
 //   const { title, image, date, desc } = hrscp;
 
-const Card = ({ id, title, date, image, desc }) => {
+const Card = ({ title, date, image, desc }) => {
   return (
-    <div>
-      <div>
+    <div className="card">
+      <div className="title">
         <h1>{title}</h1>
       </div>
 
-      <div>
+      <div className="date">
         <h1>{date}</h1>
       </div>
 
       <img src={image} alt="" />
 
-      <div>
+      <div className="desc">
         <p>{desc}</p>
       </div>
     </div>
