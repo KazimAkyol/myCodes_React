@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GorevleriGoster = () => {
+const GorevleriGoster = (yapilacak) => {
   return (
     <div>GorevleriGoster</div>
   )
