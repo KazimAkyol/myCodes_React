@@ -5,15 +5,14 @@ import GorevleriGoster from "../components/GorevleriGoster";
 import Data from "../helper/Data";
 
 const Home = () => {
-
-    const[yapilacak,setYapilacak] = useState(Data);
-    // console.log(yapilacak);
+  const [yapilacak, setYapilacak] = useState(Data);
+  // console.log(yapilacak);
 
   return (
     <div>
       <GorevEkle />
 
-      <GorevleriGoster yapilacak={yapilacak} />
+      <GorevleriGoster yapilacak={yapilacak} setYapilacak={setYapilacak} />
     </div>
   );
 };
