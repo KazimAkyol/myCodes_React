@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 
 const GorevEkle = () => {
-  const [toDo, SetTodo] = useState(toDo);
+  const [todo, SetTodo] = useState("");
+  const [day, setDay] = useState("");
+
+  const gonder = (e) => {
+    e.preventDefault()
+
+    
+  }
+
   return (
     <div>
       <header className="header">
@@ -11,14 +19,24 @@ const GorevEkle = () => {
         </button>
       </header>
 
-      <form>
+      <form onSubmit={gonder}>
         <div className="form-control">
           <label htmlFor="text">Task</label>
-          <input id="text" type="text" name="text" />
+          <input
+            id="text"
+            type="text"
+            name="text"
+            onChange={(e) => SetTodo(e.target.value)}
+          />
         </div>
         <div className="form-control">
           <label htmlFor="day">Day & Time</label>
-          <input id="day" type="datetime-local" name="day" />
+          <input
+            id="day"
+            type="datetime-local"
+            name="day"
+            onChange={(e) => setDay(e.target.value)}
+          />
         </div>
         <div>
           <button className="btn btn-submit" type="submit">
