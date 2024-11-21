@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div>
-      <GorevEkle />
+      <GorevEkle setYapilacak={setYapilacak} yapilacak = {yapilacak} />
 
       <GorevleriGoster yapilacak={yapilacak} setYapilacak={setYapilacak} />
     </div>
