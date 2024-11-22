@@ -13,9 +13,9 @@ const GorevEkle = ({ yapilacak, setYapilacak }) => {
       ...yapilacak,
     ]);
 
-    setTodo();
+    setTodo("");
 
-    setDay();
+    setDay("");
   };
 
   return (
