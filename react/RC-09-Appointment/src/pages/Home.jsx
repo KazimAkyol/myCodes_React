@@ -12,8 +12,8 @@ const Home = () => {
   const doctorClick = (abc) => {
     // tikla'yi degistir
     setTikla(!tikla);
-    // doktorlar dizisini tiklanan doktorla tek elemanli yap
 
+    // doktorlar dizisini tiklanan doktorla tek elemanli yap
     setDoktorlar(tikla ? doktorlar.filter((i) => i.id === abc) : doctorData);
   };
 
@@ -32,14 +32,14 @@ const Home = () => {
                   width="180px"
                   height="150px"
                   className="btn"
-                  style={{ backgroundColor: "aqua" }}
+                  style={{ backgroundColor: tikla ? "aqua" : "lightgreen" }}
                   onClick={() => doctorClick(doc.id)}
                 />
 
                 <h4
                   style={{
-                    backgroundColor: "aqua",
-                    borderLeft: "10px solid blue",
+                    backgroundColor: tikla ? "aqua" : "lightgreen",
+                    borderLeft: `10px solid ${tikla ? "blue" : "green"}`,
                   }}
                 >
                   {doc.doctorName}
@@ -48,7 +48,13 @@ const Home = () => {
             ))}
           </div>
         </header>
-        {!tikla && <AddPatient hastalar={hastalar} setHastalar={setHastalar} />}
+        {!tikla && (
+          <AddPatient
+            hastalar={hastalar}
+            setHastalar={setHastalar}
+            doktorlar={doktorlar}
+          />
+        )}
       </div>
 
       <PatientList

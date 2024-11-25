@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import uuid from "react-uuid";
 
-const AddPatient = ({ hastalar, setHastalar }) => {
+const AddPatient = ({ hastalar, setHastalar, doktorlar }) => {
   const [hastaName, setHastaName] = useState("");
   const [hastaTarih, setTarih] = useState("");
+
+  console.log(doktorlar);
 
   const handleSubmitt = (e) => {
     e.preventDefault(); // direkt submit olayini yapma, önce alttaki kodlara bak
@@ -15,7 +17,7 @@ const AddPatient = ({ hastalar, setHastalar }) => {
         patientName: hastaName,
         day: hastaTarih,
         isDone: false,
-        myDoctor: "DR",
+        myDoctor: doktorlar[0].doctorName,
       },
     ]);
 
@@ -51,8 +53,11 @@ const AddPatient = ({ hastalar, setHastalar }) => {
         </div>
         <div>
           <button type="submit" className="kayit btn-submit">
-            <span style={{ color: "#6a0707" }}> dr un adi </span> icin kayit
-            olustur
+            <span style={{ color: "#6a0707" }}>
+              {" "}
+              {doktorlar[0].doctorName}{" "}
+            </span>{" "}
+            icin kayit olustur
           </button>
         </div>
       </form>
