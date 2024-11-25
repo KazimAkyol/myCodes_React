@@ -6,8 +6,8 @@ import { hastaData, doctorData } from "../helper/Data";
 
 const Home = () => {
   const [doktorlar, setDoktorlar] = useState(doctorData);
+  const [hastalar, setHastalar] = useState(hastaData);
 
-  const [hastalar, setPatient] = useState(hastaData);
   const [show, setShow] = useState(true);
 
   return (
@@ -41,7 +41,7 @@ const Home = () => {
           </div>
         </header>
 
-        <AddPatient />
+        <AddPatient hastalar={hastalar} setHastalar={setHastalar} />
       </div>
 
       <PatientList />
