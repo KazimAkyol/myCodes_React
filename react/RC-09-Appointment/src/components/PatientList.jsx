@@ -6,7 +6,9 @@ const PatientList = ({ hastalar, setHastalar, doktorlar }) => {
     <div>
       {hastalar.map((hasta) => (
         <div key={hasta.id}>
-          <div
+
+{doktorlar.map((a)=>a.doctorName===hasta.myDoctor && (
+    <div
             className={hasta.isDone ? "trueStil" : "falseStyle"}
             onDoubleClick={() =>
               setHastalar(
@@ -25,6 +27,9 @@ const PatientList = ({ hastalar, setHastalar, doktorlar }) => {
               <FaTimesCircle style={{ color: "red" }} />
             </div>
           </div>
+))}
+
+
         </div>
       ))}
     </div>

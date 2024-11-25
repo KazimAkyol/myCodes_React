@@ -18,7 +18,12 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: tikla ? "block" : "flex",
+        justifyContent: "space-between",
+      }}
+    >
       <div>
         <header className="header">
           <h1>HOSPITAL</h1>
