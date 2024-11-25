@@ -39,7 +39,7 @@ body {
 .btn {
   border: none;
   cursor: pointer;
-  
+
   /* outline: none; */
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -47,7 +47,7 @@ body {
 }
 
 /* 2. sayfadaki kayıt oluştur butonu */
-.doc {
+.kayit {
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
