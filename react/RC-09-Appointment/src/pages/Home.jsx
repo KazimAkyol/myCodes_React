@@ -7,8 +7,15 @@ import { hastaData, doctorData } from "../helper/Data";
 const Home = () => {
   const [doktorlar, setDoktorlar] = useState(doctorData);
   const [hastalar, setHastalar] = useState(hastaData);
+  const [tikla, setTikla] = useState(true);
 
-  const [show, setShow] = useState(true);
+  const doctorClick = (abc) => {
+    // tikla'yi degistir
+    setTikla(!tikla);
+    // doktorlar dizisini tiklanan doktorla tek elemanli yap
+
+    setDoktorlar(tikla ? doktorlar.filter((i) => i.id === abc) : doctorData);
+  };
 
   return (
     <div>
@@ -26,6 +33,7 @@ const Home = () => {
                   height="150px"
                   className="btn"
                   style={{ backgroundColor: "aqua" }}
+                  onClick={() => doctorClick(doc.id)}
                 />
 
                 <h4
@@ -40,8 +48,7 @@ const Home = () => {
             ))}
           </div>
         </header>
-
-        <AddPatient hastalar={hastalar} setHastalar={setHastalar} />
+        {!tikla && <AddPatient hastalar={hastalar} setHastalar={setHastalar} />}
       </div>
 
       <PatientList
