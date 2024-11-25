@@ -1,9 +1,26 @@
-import React from 'react'
+import React from "react";
+import { FaTimesCircle } from "react-icons/fa";
 
-const PatientList = () => {
+const PatientList = ({ hastalar, setHastalar, doktorlar }) => {
   return (
-    <div>PatientList</div>
-  )
-}
+    <div>
+      {hastalar.map((hasta) => (
+        <div key={hasta.id}>
 
-export default PatientList
+          <div className={hasta.isDone ? "trueStil" : "falseStyle"}>
+            <div>
+              <h2>{hasta.patientName}</h2>
+              <h4>{hasta.day}</h4>
+              <h3>{hasta.myDoctor}</h3>
+            </div>
+            <div>
+              <FaTimesCircle style={{ color: "red" }} />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default PatientList;

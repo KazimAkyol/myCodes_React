@@ -22,9 +22,8 @@ const AddPatient = ({ hastalar, setHastalar }) => {
     // setHastalar'a gidildiginde hemen altta console.log varsa calisiverir ve biz UseState'in yaptigi isi göremeyiz. Bunun icin log bu submit fonksiyonunun disinda olmali.
 
     setHastaName("");
-
     setTarih("");
-    // submit sonrasi inputlardan value temizlemek PictureInPictureWindow, hem alttaki islemler yapilir hem de inputlarda value={isim} yazarak browser'da bosluksa bosluk isimse isim gözükmesi saglanir.
+    // submit sonrasi inputlardan value temizlemek PictureInPictureWindow, hem üstteki islemler yapilir hem de inputlarda value={isim} yazarak browser'da bosluksa bosluk isimse isim gözükmesi saglanir.
   };
 
   console.log(hastalar);

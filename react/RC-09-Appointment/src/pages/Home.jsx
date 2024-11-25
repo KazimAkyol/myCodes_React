@@ -44,7 +44,11 @@ const Home = () => {
         <AddPatient hastalar={hastalar} setHastalar={setHastalar} />
       </div>
 
-      <PatientList />
+      <PatientList
+        hastalar={hastalar}
+        setHastalar={setHastalar}
+        doktorlar={doktorlar}
+      />
     </div>
   );
 };
