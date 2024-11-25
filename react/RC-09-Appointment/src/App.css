@@ -5,11 +5,13 @@
   margin: 0;
   padding: 0;
 }
+
 h1 {
   color: #ed5252;
   font-weight: 900;
   margin-bottom: 30px;
 }
+
 body {
   font-family: "Poppins", sans-serif;
 
@@ -17,6 +19,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .container {
   background-image: url("https://wallpapers.com/images/hd/blank-crumpled-paper-ce2xfk1vk85mutcp-ce2xfk1vk85mutcp.webp");
 
@@ -31,10 +34,12 @@ body {
   text-align: center;
   margin: 1rem;
 }
+
 /* doktor resimleri  */
 .btn {
   border: none;
   cursor: pointer;
+  
   /* outline: none; */
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -86,12 +91,15 @@ body {
   padding: 10px 40px;
   cursor: pointer;
 }
+
 .falseStyle h2 {
   color: green;
 }
+
 .falseStyle h3 {
   color: #152bbb;
 }
+
 /*! data daki isDone kısmı true iken görünecek stil */
 .trueStil {
   display: flex;
@@ -106,10 +114,12 @@ body {
   text-decoration: line-through;
   color: blue;
 }
+
 .btn + h4 {
   padding: 10px 20px;
   /* btn className li img den sonraki h4 doktor isimleri */
 }
+
 /* ilk sayfadaki 4 doktor resmi ve isimlerinin div i*/
 .dr {
   display: flex;
