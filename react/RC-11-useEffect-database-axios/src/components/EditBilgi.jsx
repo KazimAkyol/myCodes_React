@@ -1,12 +1,6 @@
-import React  from "react";
+import React from "react";
+
 const EditBilgi = () => {
-
-
-  
-
-  
- 
-
   return (
     <div
       class="modal fade"
@@ -34,22 +28,11 @@ const EditBilgi = () => {
             {/* inputlar  */}
             <div className="mb-3">
               <label htmlFor="title">Title</label>
-              <input
-                type="text"
-                className="form-control"
-                id="title"
-           
-              />
+              <input type="text" className="form-control" id="title" />
             </div>
             <div className="mb-3">
               <label htmlFor="desc">Description</label>
-              <input
-                type="text"
-                id="desc"
-                className="form-control"
-               
-                
-              />
+              <input type="text" id="desc" className="form-control" />
             </div>
           </div>
           <div class="modal-footer">

@@ -1,8 +1,9 @@
-import React from 'react'
+import React from "react";
 import { AiFillDelete } from "react-icons/ai";
-const BilgiList = () => {
 
- 
+const BilgiList = ({ tutorials }) => {
+  console.log(tutorials);
+
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -17,32 +18,22 @@ const BilgiList = () => {
           </tr>
         </thead>
         <tbody>
-          
-          
-              <tr >
-                <th>{ }</th>
-                <td>{ }</td>
-                <td>{ } </td>
-                <td className="text-center ">
-                  <AiFillDelete
-                    type="button"
-                    className="text-danger"
-                    size={22}
-                   
-                  />
-
-               
-                </td>
-              </tr>
-          
-      
+          {tutorials.map((a) => (
+            <tr>
+              <th>{}</th>
+              <td>{}</td>
+              <td>{}</td>
+              <td className="text-center ">
+                <AiFillDelete type="button" className="text-danger" size={22} />
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Modal */}
-    
     </div>
   );
-}
+};
 
-export default BilgiList
+export default BilgiList;

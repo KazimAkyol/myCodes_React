@@ -14,9 +14,16 @@ const getBilgiler = async () => {
    const res = await axios.get(url);
 
    console.log(res.data);
+
+   setTutorials(res.data);
 }
 
-getBilgiler();
+useEffect(()=> {
+    getBilgiler();
+}, [])
+
+
+
  
 
   //! POST (create database e veri gönderme)
@@ -33,7 +40,7 @@ getBilgiler();
 
   return <>
 
- Home
+ <BilgiList tutorials={tutorials}  />
 
 
   </>;

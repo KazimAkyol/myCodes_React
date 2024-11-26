@@ -1,14 +1,10 @@
 import React from "react";
 
 const AddBilgi = () => {
-
-
-
-
   return (
     <div className="container text-center mt-4">
       <h1 className="display-6 text-danger">Add Your Tutorial</h1>
-      <form >
+      <form>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
             Title
