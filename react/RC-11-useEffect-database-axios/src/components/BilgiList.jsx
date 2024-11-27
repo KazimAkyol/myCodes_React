@@ -1,10 +1,9 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import EditBilgi from "./EditBilgi";
 
-const BilgiList = ({ tutorials, deleteBilgi }) => {
+const BilgiList = ({ tutorials, deleteBilgi, putBilgi }) => {
   // console.log(tutorials);
 
   //   const deleteBilgi = async() => {
@@ -60,8 +59,13 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
       </table>
 
       {/* Modal */}
+      {/* tutorials dizisinde map le dolaşırken her bir elemana a diyoruz ve a sadece süslünün içinde erişilir. Bu yüzden EditBilgi componentine a nın içeriğini, globalde bir state (updateBilgi) açarak, herkesin ulşamasını sağladık.tıklanan elemanın tüm bilgilerini ve tamircilerini EditBilgi comp. yolluyoruz */}
 
-      <EditBilgi updateBilgi={updateBilgi} setUpdateBilgi={setUpdateBilgi} />
+      <EditBilgi
+        updateBilgi={updateBilgi}
+        setUpdateBilgi={setUpdateBilgi}
+        putBilgi={putBilgi}
+      />
     </div>
   );
 };
