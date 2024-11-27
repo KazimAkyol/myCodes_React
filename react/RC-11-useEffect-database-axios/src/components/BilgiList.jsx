@@ -1,6 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
+import { FaEdit } from "react-icons/fa";
+import EditBilgi from "./EditBilgi";
 
 const BilgiList = ({ tutorials, deleteBilgi }) => {
   console.log(tutorials);
@@ -35,6 +37,13 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
                   size={22}
                   onClick={() => deleteBilgi(a.id)}
                 />
+
+                <FaEdit
+                  data-bs-toggle="modal"
+                  data-bs-target="#editModal"
+                  size={20}
+                  className="text-warning"
+                />
               </td>
             </tr>
           ))}
@@ -42,6 +51,8 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
       </table>
 
       {/* Modal */}
+
+      <EditBilgi />
     </div>
   );
 };
