@@ -34,13 +34,17 @@ useEffect(()=> {
 
   //! DELETE (database den silme)
 
+const deleteBilgi = async (id) => {
+   await axios.delete(`${url}${id}/`)
 
+   getBilgiler()
+}
 
 
 
   return <>
 
- <BilgiList tutorials={tutorials}  />
+ <BilgiList tutorials={tutorials} deleteBilgi={deleteBilgi} />
 
 
   </>;

@@ -1,8 +1,13 @@
+import axios from "axios";
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 
-const BilgiList = ({ tutorials }) => {
+const BilgiList = ({ tutorials, deleteBilgi }) => {
   console.log(tutorials);
+
+  //   const deleteBilgi = async() => {
+  //     await axios.delete(url/id/)
+  //   }
 
   return (
     <div className="container mt-4">
@@ -20,11 +25,16 @@ const BilgiList = ({ tutorials }) => {
         <tbody>
           {tutorials.map((a) => (
             <tr>
-              <th>{}</th>
-              <td>{}</td>
-              <td>{}</td>
+              <th>{a.id}</th>
+              <td>{a.title}</td>
+              <td>{a.description}</td>
               <td className="text-center ">
-                <AiFillDelete type="button" className="text-danger" size={22} />
+                <AiFillDelete
+                  type="button"
+                  className="text-danger"
+                  size={22}
+                  onClick={() => deleteBilgi(a.id)}
+                />
               </td>
             </tr>
           ))}
