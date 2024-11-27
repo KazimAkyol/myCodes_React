@@ -28,6 +28,12 @@ useEffect(()=> {
 
   //! POST (create database e veri gönderme)
 
+  const postBilgi =async (yeniVeri) => {
+
+    await axios.post(url, yeniVeri)
+
+    getBilgiler();
+  }
 
 
  
@@ -43,6 +49,8 @@ const deleteBilgi = async (id) => {
 
 
   return <>
+
+  <AddBilgi postBilgi={postBilgi} />
 
  <BilgiList tutorials={tutorials} deleteBilgi={deleteBilgi} />
 
