@@ -1,15 +1,17 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import EditBilgi from "./EditBilgi";
 
 const BilgiList = ({ tutorials, deleteBilgi }) => {
-  console.log(tutorials);
+  // console.log(tutorials);
 
   //   const deleteBilgi = async() => {
   //     await axios.delete(url/id/)
   //   }
+
+  const [updateBilgi, setUpdateBilgi] = useState("");
 
   return (
     <div className="container mt-4">
@@ -26,7 +28,7 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
         </thead>
         <tbody>
           {tutorials.map((a) => (
-            <tr>
+            <tr key={a.id}>
               <th>{a.id}</th>
               <td>{a.title}</td>
               <td>{a.description}</td>
@@ -43,6 +45,13 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
                   data-bs-target="#editModal"
                   size={20}
                   className="text-warning"
+                  onClick={() =>
+                    setUpdateBilgi({
+                      id: a.id,
+                      title: a.title,
+                      description: a.description,
+                    })
+                  }
                 />
               </td>
             </tr>
@@ -52,7 +61,7 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
 
       {/* Modal */}
 
-      <EditBilgi />
+      <EditBilgi updateBilgi={updateBilgi} setUpdateBilgi={setUpdateBilgi} />
     </div>
   );
 };
