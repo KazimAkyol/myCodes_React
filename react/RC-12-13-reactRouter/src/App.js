@@ -8,6 +8,7 @@ import CourseCard from "./pages/CourseCard";
 import ContactForm from "./pages/ContactForm";
 import Paths from "./pages/Paths";
 import Footer from "./components/Footer";
+import CardDetails from "./pages/CardDetails";
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/teacher" element={<Teacher />} />
           <Route path="/courses" element={<CourseCard />} />
-          <Route path="/courses/:name" element={<CourseCard />} />
+          <Route path="/courses/:namee" element={<CardDetails />} />
+
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/paths" element={<Paths />} />
         </Routes>
