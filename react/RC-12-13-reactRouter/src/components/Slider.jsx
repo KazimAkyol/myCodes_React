@@ -1,14 +1,23 @@
-import React from 'react'
+import React from "react";
 
-
-
+import Carousel from "react-bootstrap/Carousel";
 
 const Slider = () => {
   return (
-   <div>
-    slider
-   </div>
-  );
-}
+    <Carousel>
+      <Carousel.Item>
+        <img src=" " alt="" />
+      </Carousel.Item>
 
-export default Slider
+      <Carousel.Item>
+        <img src=" " alt="" />
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img src=" " alt="" />
+      </Carousel.Item>
+    </Carousel>
+  );
+};
+
+export default Slider;
