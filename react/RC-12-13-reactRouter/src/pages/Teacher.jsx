@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 // https://jsonplaceholder.typicode.com/users
+
 const Teacher = () => {
   const [user, setUser] = useState([]);
 
@@ -10,6 +11,7 @@ const Teacher = () => {
       .get("https://jsonplaceholder.typicode.com/users")
       .then((res) => setUser(res.data));
   }, []);
+
   return (
     <div className="container">
       <div className="row justify-content-center">
