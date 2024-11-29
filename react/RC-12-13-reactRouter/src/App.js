@@ -9,6 +9,7 @@ import ContactForm from "./pages/ContactForm";
 import Paths from "./pages/Paths";
 import Footer from "./components/Footer";
 import CardDetails from "./pages/CardDetails";
+import TeacherDetails from "./pages/TeacherDetails";
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/teacher" element={<Teacher />} />
+          <Route path="/teacher/id" element={<TeacherDetails />} />
+
           <Route path="/courses" element={<CourseCard />} />
           <Route path="/courses/:namee" element={<CardDetails />} />
 

@@ -22,7 +22,7 @@ const CourseCard = () => {
                   onClick={() => navigasyon(`/courses/${a.name}`)}
                   variant="primary"
                 >
-                  Go somewhere
+                  DETAILS
                 </Button>
               </Card.Body>
             </Card>
