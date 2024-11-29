@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Teacher = () => {
   const [user, setUser] = useState([]);
-  const navigatee = useNavigate()
+  const navigatee = useNavigate();
 
   useEffect(() => {
     axios
@@ -17,19 +17,21 @@ const Teacher = () => {
   return (
     <div className="container">
       <div className="row justify-content-center">
-        {user.map(({ id, name, username }) => (
+        {user.map((kisi) => (
           <div
             className="col col-12 col-sm-6 col-md-4 bg-danger-subtle border border-3 m-2 rounded-5"
-            key={id}
+            key={kisi.id}
           >
             <img
-              src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${id}`}
+              src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${kisi.id}`}
               alt=""
               className="w-50"
-              onClick={()=>navigatee(`/teacher/${id}`)}
+              onClick={() =>
+                navigatee(`/teacher/${kisi.id}`, { state: { kisi } })
+              }
             />
-            <h3>{name}</h3>
-            <p>{username}</p>
+            <h3>{kisi.name}</h3>
+            <p>{kisi.username}</p>
           </div>
         ))}
       </div>
