@@ -2,11 +2,28 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 const TeacherDetails = () => {
+  //! 1.yol navigate yolladığı path e id yi gömerek yolladı, burada da useParams la id yi çektik*******
+
+  //   const { id } = useParams();
+  // path ile yollanan id yi useParams hook uyla yakaladık
+  //   const [kisi, setKisi] = useState({});
+
+  //   useEffect(() => {
+  //     axios
+  //       .get(`https://jsonplaceholder.typicode.com/users/${id}`)
+  //       .then((res) => setKisi(res.data))
+  //   }, [id]);
+
+  
+  //! 2.yol
+  //! useLocation.//  navigate ile gonderilen state'i yakalamak icin useLocation Hook'u kullanilabilir.
+  //! Bu durumda veri, state ile geldigi icin yeniden fetch yapilmasina gerek kalmaz.
+
   const {
     state: { kisi },
   } = useLocation();
   return (
-    <div>
+    <div className="text-center">
       <img
         src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${kisi.id}`}
         alt=""
