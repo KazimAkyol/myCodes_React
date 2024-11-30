@@ -13,7 +13,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+// database'e yolla
 
+localStorage.setItem("email", JSON.stringify(email))
+localStorage.setItem("pass", JSON.stringify(password))
 
 setEmail("")
 setPass("")

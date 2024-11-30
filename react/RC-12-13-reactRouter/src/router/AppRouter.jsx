@@ -10,6 +10,7 @@ import ContactForm from "../pages/ContactForm";
 import Paths from "../pages/Paths";
 import Footer from "../components/Footer";
 import Login from "../pages/Login";
+import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
   return (
@@ -20,7 +21,13 @@ const AppRouter = () => {
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
 
-        <Route path="/teacher" element={<Teacher />} />
+        {/* sifre kontrolü icin privateRouter'a gidecegiz */}
+
+        <Route path="/teacher" element={<PrivateRouter />}>
+          <Route path="" element={<Teacher />} />
+        </Route>
+
+        {/* <Route path="/teacher" element={<Teacher />} /> */}
         <Route path="/teacher/:id" element={<TeacherDetails />} />
 
         <Route path="/courses" element={<CourseCard />} />
