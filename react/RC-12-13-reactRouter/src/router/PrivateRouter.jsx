@@ -10,6 +10,6 @@ const PrivateRouter = () => {
   );
 };
 
-// kullanici doğru  isim girdiyse Outlet komponenti sayesinde istenilen sayfaya git,yanlışlık varsa Navigate ile bulunduğun yerde (Login) kal ya da başka path veriledebilir.
+// kullanici doğru  isim girdiyse Outlet komponenti sayesinde istenilen sayfaya git,yanlışlık varsa Navigate ile bulunduğun yerde (Login) kal ya da başka path verilebilir.
 
 export default PrivateRouter;

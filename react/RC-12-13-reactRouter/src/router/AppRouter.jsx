@@ -43,6 +43,7 @@ const AppRouter = () => {
 
         {/* <Route path="/paths" element={<Paths />} /> */}
 
+        {/* nested route : paths sayfası açıkken (paths gitmeden) altına extra sayfa açılsın istiyorum, paths sayfasında 2 buton var, navigate ile biri fs biri aws yollarını yolluyor buraya, bende paths sarmal route un içine self-closing route larla ikisinin açacağı sayfaları ekliyorum (toggle benzeri bir durumu navigate ile yaptik) */}
         <Route path="/paths" element={<Paths />}>
           <Route path="/paths/fs" element={<FS />} />
           <Route path="aws" element={<AWS />} />
