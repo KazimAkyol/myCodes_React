@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const TeacherDetails = () => {
   //! 1.yol navigate yolladığı path e id yi gömerek yolladı, burada da useParams la id yi çektik*******
@@ -21,6 +21,9 @@ const TeacherDetails = () => {
   const {
     state: { kisi },
   } = useLocation();
+
+  const navigate = useNavigate();
+
   return (
     <div className="text-center">
       <img
@@ -34,8 +37,12 @@ const TeacherDetails = () => {
       <h5>{kisi.phone}</h5>
 
       <div>
-        <button className="btn btn-success">GO BACK</button>
-        <button className="btn btn-warning">GO HOME</button>
+        <button onClick={() => navigate(-1)} className="btn btn-success">
+          GO BACK
+        </button>
+        <button onClick={() => navigate("/")} className="btn btn-warning">
+          GO HOME
+        </button>
       </div>
     </div>
   );
