@@ -11,6 +11,7 @@ import Paths from "../pages/Paths";
 import Footer from "../components/Footer";
 import Login from "../pages/Login";
 import PrivateRouter from "./PrivateRouter";
+import NotFound from "../pages/NotFound";
 
 const AppRouter = () => {
   return (
@@ -35,6 +36,8 @@ const AppRouter = () => {
 
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/paths" element={<Paths />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>

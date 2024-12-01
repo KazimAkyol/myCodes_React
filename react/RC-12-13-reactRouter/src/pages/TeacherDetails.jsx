@@ -14,7 +14,6 @@ const TeacherDetails = () => {
   //       .then((res) => setKisi(res.data))
   //   }, [id]);
 
-  
   //! 2.yol
   //! useLocation.//  navigate ile gonderilen state'i yakalamak icin useLocation Hook'u kullanilabilir.
   //! Bu durumda veri, state ile geldigi icin yeniden fetch yapilmasina gerek kalmaz.
@@ -25,6 +24,7 @@ const TeacherDetails = () => {
   return (
     <div className="text-center">
       <img
+        width="400px"
         src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${kisi.id}`}
         alt=""
       />
@@ -32,6 +32,11 @@ const TeacherDetails = () => {
       <h2>{kisi.email}</h2>
       <h5>{kisi.website}</h5>
       <h5>{kisi.phone}</h5>
+
+      <div>
+        <button className="btn btn-success">GO BACK</button>
+        <button className="btn btn-warning">GO HOME</button>
+      </div>
     </div>
   );
 };
