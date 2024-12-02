@@ -1,28 +1,20 @@
-
-  
-
-
 import { useState } from "react";
+
 const Login = () => {
-  
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
 
-
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-// database'e yolla
+    // database'e yolla
 
-localStorage.setItem("email", JSON.stringify(email))
-localStorage.setItem("pass", JSON.stringify(password))
+    localStorage.setItem("email", JSON.stringify(email));
+    localStorage.setItem("pass", JSON.stringify(password));
 
-setEmail("")
-setPass("")
+    setEmail("");
+    setPass("");
   };
 
-  
   return (
     <div className="container text-center mt-4">
       <h1 className="display-6 text-danger">LOG IN</h1>
@@ -43,7 +35,7 @@ setPass("")
         </div>
         <div className="mb-3">
           <label htmlFor="pass" className="form-label">
-          Password
+            Password
           </label>
           <input
             type="password"
