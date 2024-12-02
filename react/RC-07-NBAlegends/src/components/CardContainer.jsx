@@ -4,7 +4,7 @@ import { data } from "../helpers/data";
 import PlayerCard from "./PlayerCard";
 
 const CardContainer = () => {
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <div>
@@ -14,10 +14,10 @@ const CardContainer = () => {
           aria-describedby="basic-addon1"
           className="w-50"
         />
-        <Container>
+        <Container className="my-2 kartContainer">
           <Row>
             {data.map((player) => (
-              <PlayerCard />
+              <PlayerCard {...player} />
             ))}
           </Row>
         </Container>

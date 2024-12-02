@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 
-const PlayerCard = () => {
+const PlayerCard = ({ name, img, statistics }) => {
   const [gosterImage, setGosterImage] = useState(true);
 
   return (
-    <div
-      className="player-card m-auto"
-      role="button"
-      //  tıklanınca gosterImage true-false değişsin
-    >
-      {/* {
-  gosterImage true iken babadan gelen datanın image sini ismini bastır, gosterImage false iken statistic i ul li lere bastır
-} */}
-    </div>
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={img} />
+      <Card.Footer className="text-muted"></Card.Footer>
+      <Card.Title>{name}</Card.Title>
+    </Card>
   );
 };
 
