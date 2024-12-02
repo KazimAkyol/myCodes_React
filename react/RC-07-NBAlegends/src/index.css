@@ -1,36 +1,35 @@
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(239, 158, 158);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+body {
+  background-color: rgb(239, 158, 158);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
 /*! Player Card Component Styling */
 
-.card-container{
-    background-image: url("https://p4.wallpaperbetter.com/wallpaper/661/973/110/cool-nba-logo-wallpaper-preview.jpg");
+.card-container {
+  background-image: url("https://p4.wallpaperbetter.com/wallpaper/661/973/110/cool-nba-logo-wallpaper-preview.jpg");
 }
 
-.player-card{
-    height:400px;
-    width:280px;
+.player-card {
+  height: 400px;
+  width: 280px;
 }
 
-.player-card:hover{
-    box-shadow: 3px 3px 20px 5px rgb(0, 0, 0, 0.5);
+.player-card:hover {
+  box-shadow: 3px 3px 20px 5px rgb(0, 0, 0, 0.5);
 }
 
-.player-logo{
-    height: 350px;
-    transition:transform 0.8s; 
-    /* alttaki scale olayı 0.8s içinde olsun */
+.player-logo {
+  height: 350px;
+  transition: transform 0.8s;
+  /* alttaki scale olayı 0.8s içinde olsun */
 }
 
 .player-card:hover .player-logo {
-
-    transform:scale(0.95);
+  transform: scale(0.95);
 }

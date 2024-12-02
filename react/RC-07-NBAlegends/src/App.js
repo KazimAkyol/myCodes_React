@@ -1,6 +1,9 @@
 import React from "react";
-import Header from "./components/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 import { Container } from "react-bootstrap";
+
+import Header from "./components/Header";
 import CardContainer from "./components/CardContainer";
 
 function App() {
