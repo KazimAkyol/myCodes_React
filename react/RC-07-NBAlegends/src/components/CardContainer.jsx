@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Form, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { data } from "../helpers/data";
 import PlayerCard from "./PlayerCard";
 
@@ -17,7 +17,9 @@ const CardContainer = () => {
         <Container className="my-2 kartContainer">
           <Row>
             {data.map((player) => (
-              <PlayerCard {...player} />
+              <Col className="my-2" key={player.name}>
+                <PlayerCard {...player} />
+              </Col>
             ))}
           </Row>
         </Container>
