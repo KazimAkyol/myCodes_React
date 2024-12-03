@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import CardTotal from "../components/CardTotal";
 import axios from "axios";
@@ -13,10 +13,14 @@ const ProductList = () => {
   const getUrunler = async () => {
     const { data } = await axios.get(BASE_URL);
 
-    console.log(data);
+    // console.log(data);
+
+    setProdukte(data);
   };
 
-  getUrunler();
+  useEffect(() => {
+    getUrunler();
+  }, []);
 
   return (
     <div className="container mt-3">
@@ -25,7 +29,9 @@ const ProductList = () => {
 
         <>
           <article id="product-panel" className="col-md-6">
-            <ProductCard />
+            {produkte.map((ürün) => (
+              <ProductCard ürün={ürün} />
+            ))}
           </article>
           <article className="col-md-4 m-3">
             <CardTotal />

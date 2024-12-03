@@ -1,12 +1,12 @@
 import React from "react";
 
-const ProductCard = () => {
+const ProductCard = ({ ürün }) => {
   return (
     <div className="card shadow-lg mb-3">
       <div className="row g-0">
         <div className="col-md-5">
           <img
-            src={"image"}
+            src={ürün.image}
             className="w-100 h-100 rounded-start"
             alt={"name"}
             title={""}
@@ -15,12 +15,14 @@ const ProductCard = () => {
         <div className="col-md-7">
           <div className="card-body">
             <h5 className="card-title" role="button">
-              Ürün İsmi
+              {ürün.name}
             </h5>
             <div className="product-price d-flex flex-wrap align-items-center">
-              <span className="damping-price text-warning h2">$Fiyat</span>
+              <span className="damping-price text-warning h2">
+                ${(ürün.price * ürün.dampingRate).toFixed}
+              </span>
               <span className="h5 text-dark text-decoration-line-through">
-                Asıl Fiyat
+                {ürün.price}
               </span>
             </div>
             <div className="border border-1 border-dark shadow-lg d-flex justify-content-center p-2">
@@ -29,7 +31,7 @@ const ProductCard = () => {
                   <i className="fas fa-minus"></i>
                 </button>
                 <p className="d-inline mx-4" id="product-quantity">
-                  Miktar
+                  {ürün.amount}
                 </p>
                 <button className="btn btn-secondary btn-sm">
                   <i className="fas fa-plus"></i>
@@ -42,7 +44,10 @@ const ProductCard = () => {
               </button>
             </div>
             <div className="mt-2">
-              Product Total: $<span className="product-line-price">Total</span>
+              Product Total: $
+              <span className="product-line-price">
+                {ürün.price * ürün.dampingRate * ürün.amount}
+              </span>
             </div>
           </div>
         </div>
