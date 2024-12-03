@@ -8,7 +8,6 @@ const PlayerCard = ({ name, img, statistics }) => {
 
   return (
     <Card
-      style={{ width: "18rem" }}
       className="player-kart m-auto"
       role="button"
       onClick={() => setShowImage(!showImage)}

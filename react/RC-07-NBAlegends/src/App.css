@@ -5,17 +5,21 @@
 }
 
 body {
-  background-color: #22c29a;
+  background-color: #6aee94;
 }
 
 .kartContainer {
   background-image: url("https://p4.wallpaperbetter.com/wallpaper/661/973/110/cool-nba-logo-wallpaper-preview.jpg");
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .player-kart {
   height: 400px;
   transition: transform 1s;
+  max-width: 280px;
 }
 
 .player-resim {
