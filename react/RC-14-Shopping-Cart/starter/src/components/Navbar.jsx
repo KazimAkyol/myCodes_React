@@ -1,9 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-primary">
+    <nav className="navbar navbar-expand-lg bg-info">
       <div className="container-fluid">
         <span className="navbar-brand text-white">Shopping Card</span>
         <button
@@ -20,22 +19,22 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink class="nav-link" to="/">
+              <NavLink to="/" className="nav-link ">
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink class="nav-link" to="/new-product">
+              <NavLink className="nav-link " to="/new-product">
                 New Product
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink class="nav-link" to="/products">
+              <NavLink className="nav-link " to="/products">
                 Product List
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink class="nav-link" to="/about">
+              <NavLink className="nav-link " to="/about">
                 About
               </NavLink>
             </li>
