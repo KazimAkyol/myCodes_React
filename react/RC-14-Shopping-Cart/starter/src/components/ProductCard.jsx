@@ -1,6 +1,31 @@
 import React from "react";
+import axios from "axios";
 
-const ProductCard = ({ ürün }) => {
+const ProductCard = ({ ürün, getUrunler }) => {
+  const remove = async () => {
+    await axios.delete(
+      `https://63f4e5583f99f5855db9e941.mockapi.io/products/${ürün.id}`
+    );
+
+    getUrunler();
+  };
+
+  const arttir = async () => {
+    await axios.put(
+      `https://63f4e5583f99f5855db9e941.mockapi.io/products/${ürün.id}`,
+      { ...ürün, amount: ürün.amount + 1 }
+    );
+    getUrunler();
+  };
+
+  const azalt = async () => {
+    await axios.put(
+      `https://63f4e5583f99f5855db9e941.mockapi.io/products/${ürün.id}`,
+      { ...ürün, amount: ürün.amount - 1 }
+    );
+    getUrunler();
+  };
+
   return (
     <div className="card shadow-lg mb-3">
       <div className="row g-0">
@@ -27,19 +52,22 @@ const ProductCard = ({ ürün }) => {
             </div>
             <div className="border border-1 border-dark shadow-lg d-flex justify-content-center p-2">
               <div className="quantity-controller">
-                <button className="btn btn-secondary btn-sm">
+                <button onClick={azalt} className="btn btn-secondary btn-sm">
                   <i className="fas fa-minus"></i>
                 </button>
                 <p className="d-inline mx-4" id="product-quantity">
                   {ürün.amount}
                 </p>
-                <button className="btn btn-secondary btn-sm">
+                <button onClick={arttir} className="btn btn-secondary btn-sm">
                   <i className="fas fa-plus"></i>
                 </button>
               </div>
             </div>
             <div className="product-removal mt-4">
-              <button className="btn btn-danger btn-sm w-100 remove-product">
+              <button
+                onClick={remove}
+                className="btn btn-danger btn-sm w-100 remove-product"
+              >
                 <i className="fa-solid fa-trash-can me-2"></i>Remove
               </button>
             </div>

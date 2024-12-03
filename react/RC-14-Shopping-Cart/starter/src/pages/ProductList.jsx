@@ -33,7 +33,7 @@ const ProductList = () => {
           <>
             <article id="product-panel" className="col-md-6">
               {produkte.map((ürün) => (
-                <ProductCard ürün={ürün} />
+                <ProductCard ürün={ürün} getUrunler={getUrunler} />
               ))}
             </article>
             <article className="col-md-4 m-3">
