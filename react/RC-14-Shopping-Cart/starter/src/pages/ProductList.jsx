@@ -16,6 +16,8 @@ const ProductList = () => {
     // console.log(data);
 
     setProdukte(data);
+
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -24,21 +26,21 @@ const ProductList = () => {
 
   return (
     <div className="container mt-3">
-      <div className={"bg-light d-sm-block d-md-flex"}>
-        <p className="text-center text-danger w-100">Loading....</p>
-
-        <>
-          <article id="product-panel" className="col-md-6">
-            {produkte.map((ürün) => (
-              <ProductCard ürün={ürün} />
-            ))}
-          </article>
-          <article className="col-md-4 m-3">
-            <CardTotal />
-          </article>
-        </>
-
-        <p className="text-center text-danger w-100">No products data...</p>
+      <div className="bg-light d-sm-block d-md-flex">
+        {loading === true ? (
+          <p className="text-center text-danger w-100">Loading....</p>
+        ) : (
+          <>
+            <article id="product-panel" className="col-md-6">
+              {produkte.map((ürün) => (
+                <ProductCard ürün={ürün} />
+              ))}
+            </article>
+            <article className="col-md-4 m-3">
+              <CardTotal />
+            </article>
+          </>
+        )}
       </div>
     </div>
   );

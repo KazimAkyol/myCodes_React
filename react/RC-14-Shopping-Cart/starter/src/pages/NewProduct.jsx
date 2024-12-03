@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const NewProduct = () => {
   const [formData, setFormData] = useState({
     name: "",
     price: "",
     amount: "",
-    dampingRate: "",
+    image: "",
   });
 
   const handleSubmit = async (e) => {
@@ -21,8 +22,10 @@ const NewProduct = () => {
       name: "",
       price: "",
       amount: "",
-      dampingRate: "",
+      image: "",
     });
+
+    // burada save den sonra ürünleri görmek istersek, navigate ile /products yolunun olduğu ProductList sayfasına gidebiliriz.
   };
 
   return (
