@@ -51,7 +51,8 @@ const About = () => {
                   <a
                     className="text-decoration-none text-black "
                     href="https://github.com/anthonyharold67"
-                    target="true">
+                    target="true"
+                  >
                     Message
                   </a>
                 </button>
@@ -59,7 +60,8 @@ const About = () => {
                   <a
                     className="text-decoration-none text-white"
                     href="https://github.com/anthonyharold67"
-                    target="true">
+                    target="true"
+                  >
                     Contact
                   </a>
                 </button>

@@ -18,10 +18,10 @@ const ProductCard = () => {
               Ürün İsmi
             </h5>
             <div className="product-price d-flex flex-wrap align-items-center">
-                <span className="damping-price text-warning h2">$Fiyat</span>
-                <span className="h5 text-dark text-decoration-line-through">
-                  Asıl Fiyat
-                </span>
+              <span className="damping-price text-warning h2">$Fiyat</span>
+              <span className="h5 text-dark text-decoration-line-through">
+                Asıl Fiyat
+              </span>
             </div>
             <div className="border border-1 border-dark shadow-lg d-flex justify-content-center p-2">
               <div className="quantity-controller">
