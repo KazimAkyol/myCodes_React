@@ -1,4 +1,4 @@
-
+import React from "react";
 import Main from "./pages/Main";
 import NewProduct from "./pages/NewProduct";
 import ProductList from "./pages/ProductList";
