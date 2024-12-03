@@ -7,7 +7,7 @@ const CardContainer = () => {
   // console.log(data);
   return (
     <>
-      <div>
+      <Row>
         <Form.Control
           placeholder="Search Player..."
           aria-label="search"
@@ -15,7 +15,7 @@ const CardContainer = () => {
           className="w-50"
         />
         <Container className="my-2 kartContainer">
-          <Row>
+          <Row xs={1} md={2} lg={4}>
             {data.map((player) => (
               <Col className="my-2" key={player.name}>
                 <PlayerCard {...player} />
@@ -23,7 +23,7 @@ const CardContainer = () => {
             ))}
           </Row>
         </Container>
-      </div>
+      </Row>
     </>
   );
 };
