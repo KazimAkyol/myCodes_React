@@ -19,22 +19,34 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink to="/" className="nav-link ">
+              <NavLink
+                style={({ isActive }) => ({
+                  fontSize: isActive && "50px",
+                })}
+                to="/"
+                className="nav-link "
+              >
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link " to="/new-product">
+              <NavLink style={({ isActive }) => ({
+                  fontSize: isActive && "50px",
+                })} className="nav-link " to="/new-product">
                 New Product
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link " to="/products">
+              <NavLink style={({ isActive }) => ({
+                  fontSize: isActive && "50px",
+                })} className="nav-link " to="/products">
                 Product List
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link " to="/about">
+              <NavLink style={({ isActive }) => ({
+                  fontSize: isActive && "50px",
+                })} className="nav-link " to="/about">
                 About
               </NavLink>
             </li>

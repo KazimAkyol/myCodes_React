@@ -1,11 +1,23 @@
-
-import React from "react";
+import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import CardTotal from "../components/CardTotal";
-
-
+import axios from "axios";
 
 const ProductList = () => {
+  const BASE_URL = "https://63f4e5583f99f5855db9e941.mockapi.io/products";
+
+  const [produkte, setProdukte] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+  const getUrunler = async () => {
+    const { data } = await axios.get(BASE_URL);
+
+    console.log(data);
+  };
+
+  getUrunler();
+
   return (
     <div className="container mt-3">
       <div className={"bg-light d-sm-block d-md-flex"}>
