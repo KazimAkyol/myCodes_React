@@ -37,7 +37,7 @@ const ProductList = () => {
               ))}
             </article>
             <article className="col-md-4 m-3">
-              <CardTotal />
+              <CardTotal produkte={produkte} />
             </article>
           </>
         )}
