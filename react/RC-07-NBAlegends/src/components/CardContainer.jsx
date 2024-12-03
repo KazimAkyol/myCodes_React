@@ -12,7 +12,7 @@ const CardContainer = () => {
           placeholder="Search Player..."
           aria-label="search"
           aria-describedby="basic-addon1"
-          className="w-50"
+          className="w-50 m-auto"
         />
         <Container className="my-2 kartContainer">
           <Row xs={1} md={2} lg={4}>
