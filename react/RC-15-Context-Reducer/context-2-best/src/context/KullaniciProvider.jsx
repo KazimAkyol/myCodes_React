@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { createContext } from 'react'
 
-const KullaniciProvider = () => {
+//! 1- create context
+
+export const KullaniciContext=createContext()
+
+const KullaniciProvider = ({children}) => {
+
+
+        fetch("https://api.github.com/users")
+          .then((res) => res.json())
+          .then((veri) => console.log(veri));
+      
+
+
   return (
-    <div>KullaniciProvider</div>
+    //! 2- context alanı ile sarmallayarak çocuklara veri gönderilebilir demiş olduk:
+
+    <KullaniciContext.Provider>
+      {children}
+    </KullaniciContext.Provider>
   )
 }
 

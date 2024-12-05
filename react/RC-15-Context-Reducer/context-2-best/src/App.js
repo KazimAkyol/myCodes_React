@@ -1,14 +1,15 @@
-import React from 'react'
-import GosterUsers from './pages/GosterUsers'
-import KullaniciProvider from './context/KullaniciProvider'
+import React from "react";
+import GosterUsers from "./pages/GosterUsers";
+import KullaniciProvider from "./context/KullaniciProvider";
 
 const App = () => {
   return (
-    <div>
+    //! 3- context sayfasiyla bütün projeyi sarmalladik:
 
-      <GosterUsers/>
-    </div>
-  )
-}
+    <KullaniciProvider>
+      <GosterUsers />
+    </KullaniciProvider>
+  );
+};
 
-export default App
+export default App;
