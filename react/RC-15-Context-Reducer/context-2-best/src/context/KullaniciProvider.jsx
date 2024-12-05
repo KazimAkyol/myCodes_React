@@ -1,25 +1,25 @@
-import React, { createContext } from 'react'
+import React, { createContext, useEffect, useState } from "react";
 
 //! 1- create context
 
-export const KullaniciContext=createContext()
+export const KullaniciContext = createContext();
 
-const KullaniciProvider = ({children}) => {
+const KullaniciProvider = ({ children }) => {
+  const [users, setUsers] = useState([]);
 
-
-        fetch("https://api.github.com/users")
-          .then((res) => res.json())
-          .then((veri) => console.log(veri));
-      
-
+  useEffect(() => {
+    fetch("https://api.github.com/users")
+      .then((res) => res.json())
+      .then((veri) => setUsers(veri));
+  }, []);
 
   return (
     //! 2- context alanı ile sarmallayarak çocuklara veri gönderilebilir demiş olduk:
 
-    <KullaniciContext.Provider>
+    <KullaniciContext.Provider value={{ users }}>
       {children}
     </KullaniciContext.Provider>
-  )
-}
+  );
+};
 
-export default KullaniciProvider
+export default KullaniciProvider;
