@@ -1,18 +1,21 @@
-import React from 'react'
-import OgrenciItem from './OgrenciItem';
+import React from "react";
+import OgrenciItem from "./OgrenciItem";
 
 const OgrenciList = () => {
   return (
     <div>
       <img
-        src="https://gelecekegitimde.com/wp-content/uploads/2015/01/fft99_mf3019637.jpeg"
+        src="https://cdn.pixabay.com/photo/2024/05/31/14/46/ai-generated-8800717_1280.jpg"
+        width="700px"
         alt=""
       />
-      <h2 style={{textAlign:"center", background:"pink"}}>ÖĞRENCİ LİSTESİ</h2>
+      <h2 style={{ textAlign: "center", background: "pink" }}>
+        ÖĞRENCİ LİSTESİ
+      </h2>
 
-<OgrenciItem/>
+      <OgrenciItem />
     </div>
   );
-}
+};
 
-export default OgrenciList
+export default OgrenciList;
