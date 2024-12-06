@@ -16,8 +16,27 @@ class LifeCycle extends Component {
     };
   }
 
+  //! Component DOM'a yerleştiğinde çalışır. API çağrıları veya başlangıç işlevlerini burada yapabilirsiniz.
+
+  componentDidMount() {
+    console.log("component Dom'a yerlesti");
+  }
+
+  componentDidUpdate() {
+    console.log("Update calisti");
+  }
+
+  increment = () => {
+    this.setState((prevState) => ({ count: prevState.count + 1 }));
+  };
+
   render() {
-    return <h3>Count:{this.state.count}</h3>;
+    return (
+      <div className="mt-2">
+        return <h3>Count:{this.state.count}</h3>
+        <button onClick={() => this.increment()}>ARTTIR</button>
+      </div>
+    );
   }
 }
 

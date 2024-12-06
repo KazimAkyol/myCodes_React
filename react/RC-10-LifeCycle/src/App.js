@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import Selamlama from "./components/Selamlama";
 import LifeCycle from "./components/LifeCycle";
 
