@@ -26,6 +26,10 @@ class LifeCycle extends Component {
     console.log("Update calisti");
   }
 
+  componentWillUnmount() {
+    console.log("Component öldü.Mevlüdüne davetlisiniz");
+  }
+
   increment = () => {
     this.setState((prevState) => ({ count: prevState.count + 1 }));
   };

@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Selamlama from "./components/Selamlama";
 import LifeCycle from "./components/LifeCycle";
 
 function App() {
+  const [show, setShow] = useState(true);
   return (
     <div className="App">
       <Selamlama isim="Gökhan" />
 
-      <LifeCycle />
+      <button onClick={() => setShow(!show)}>SHOW</button>
+
+      {show && <LifeCycle />}
     </div>
   );
 }
