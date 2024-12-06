@@ -34,11 +34,38 @@ class LifeCycle extends Component {
     this.setState((prevState) => ({ count: prevState.count + 1 }));
   };
 
+  decrement = () => {
+    this.setState((prevState) => ({ count: prevState.count - 1 }));
+  };
+
+  reset = () => {
+    this.setState((prevState) => ({ count: 0 }));
+  };
+
   render() {
     return (
-      <div className="mt-2">
-        return <h3>Count:{this.state.count}</h3>
-        <button onClick={() => this.increment()}>ARTTIR</button>
+      <div>
+        <div className="container mt-5 ">
+          <div className="card text-center shadow w-50 m-auto">
+            <div className="card-header bg-primary text-white">
+              <h2>Counter</h2>
+            </div>
+            <div className="card-body">
+              <h1 className="display-4 mb-4">{this.state.count}</h1>
+              <div className="btn-group">
+                <button className="btn btn-success" onClick={this.increment}>
+                  <i className="bi bi-plus-circle"></i> Artir
+                </button>
+                <button className="btn btn-danger" onClick={this.decrement}>
+                  <i className="bi bi-dash-circle"></i> Azalt
+                </button>
+                <button className="btn btn-warning" onClick={this.reset}>
+                  <i className="bi bi-arrow-counterclockwise"></i> Sifirla
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
