@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Selamlama from "./components/Selamlama";
 
-const App = () => {
+function App() {
   return (
-    <div>App</div>
-  )
+    <div className="App">
+      <Selamlama />
+    </div>
+  );
 }
 
-export default App
+export default App;
