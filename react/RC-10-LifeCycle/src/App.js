@@ -1,10 +1,13 @@
 import React from "react";
 import Selamlama from "./components/Selamlama";
+import LifeCycle from "./components/LifeCycle";
 
 function App() {
   return (
     <div className="App">
-      <Selamlama />
+      <Selamlama isim="Gökhan" />
+
+      <LifeCycle />
     </div>
   );
 }

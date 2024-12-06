@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Selamlama extends Component {
   render() {
-    return <h2>Merhaba</h2>;
+    return <h2>Merhaba {this.props.isim} </h2>;
   }
 }
 
