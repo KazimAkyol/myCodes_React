@@ -1,18 +1,35 @@
-import React, { useState } from 'react'
-import moment from "moment"
+//! UseEffect
+// İlk argüman bir fonksiyondur.Bu fonksiyon içinde API çağrıları, zamanlayıcı başlatma gibi işlemler gerçekleştirilir.
+// İkinci argüman olarak verilen bir bağımlılık dizisi (dependency array) sayesinde useEffect, ne zaman çalışacağını belirler.
+// Eğer dependency array verilmezse, sonsuz döngü oluşabilir, çünkü her render'da useEffect tekrar çalışır.
+
+import React, { useEffect, useState } from "react";
+import moment from "moment";
 
 const Clock = () => {
-    const[zaman, setZaman]=useState(moment)
+  const [zaman, setZaman] = useState(moment);
+
+  //! Component Did Mount işlemi
+  // Yeni Hook useEffect hook'u
+
+  useEffect(() => {
+    setInterval(() => {
+      console.log("artis var");
+      setZaman(moment());
+    }, 1000);
+  }, []);
+  // Köşeli parantez kullanımı bir defa render ediyor demektir.
+
   return (
     <div className="container d-flex justify-content-center mt-3 w-50">
-        <div className="card shadow-lg p-4 rounded">
-          <h1 className="display-4 text-center text-primary">
-            {zaman.format("HH:mm:ss")}
-          </h1>
-          <p className="text-center text-muted">Anlik Saat</p>
-        </div>
+      <div className="card shadow-lg p-4 rounded">
+        <h1 className="display-4 text-center text-primary">
+          {zaman.format("HH:mm:ss")}
+        </h1>
+        <p className="text-center text-muted">Anlik Saat</p>
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Clock
+export default Clock;
