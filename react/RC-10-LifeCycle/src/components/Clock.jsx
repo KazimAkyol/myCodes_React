@@ -27,6 +27,12 @@ const Clock = () => {
   }, []);
   // Köşeli parantez kullanımı bir defa render ediyor demektir.
 
+  //! Component Did Update karsiligi olarak useEffect kullaniyoruz.
+
+  useEffect(() => {
+    console.log("Did Update calisti");
+  }, [count]);
+
   return (
     <div className="container d-flex justify-content-center mt-3 w-50">
       <div className="card shadow-lg p-4 rounded">
