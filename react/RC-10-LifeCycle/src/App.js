@@ -4,6 +4,7 @@ import Selamlama from "./components/Selamlama";
 import LifeCycle from "./components/LifeCycle";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Clock from "./components/Clock";
+import People from "./fetch-axios/People";
 
 function App() {
   const [show, setShow] = useState(true);
@@ -16,7 +17,9 @@ function App() {
       </button>
       {/* {show && <LifeCycle />} */}
 
-      {show && <Clock />}
+      {/* {show && <Clock />} */}
+
+      {show && <People />}
     </div>
   );
 }
