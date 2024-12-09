@@ -27,7 +27,7 @@ const Login = () => {
     // Varsa database yoksa görevi gören bir yapiya kayit islemi, biz localstorage kullaniyoruz:
 
     localStorage.setItem("username", name);
-    localStorage.setItem("password, password");
+    localStorage.setItem("password", password);
     navigate("/home");
   };
 
