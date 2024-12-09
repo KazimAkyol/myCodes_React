@@ -9,11 +9,15 @@ const AnaUser = () => {
       {users.map((a) => (
         <div>
           <h3>{a.login}</h3>
-          <img src={a.avatar_url} alt="" width="100px" />
+          
+          <img src={a.avatar_url} alt="" width={a.width} />
 
           <div>
             <label htmlFor="">Image width(px):</label>
-            <input type="number" onClick={(e) => changeWidth(a.id, e.target.value)} />
+            <input
+              type="number"
+              onClick={(e) => changeWidth(a.id, e.target.value)}
+            />
           </div>
         </div>
       ))}

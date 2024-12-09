@@ -13,9 +13,9 @@ const KullaniciProvider = ({ children }) => {
       .then((veri) => setUsers(veri));
   }, []);
 
-  const changeWidth=(tc, size)=>{
-    
-  }
+  const changeWidth = (tc, size) => {
+    setUsers(users.map((a) => (a.id === tc ? { ...a, width: size } : a)));
+  };
 
   return (
     //! 2- context alanı ile sarmallayarak çocuklara veri gönderilebilir demiş olduk:
