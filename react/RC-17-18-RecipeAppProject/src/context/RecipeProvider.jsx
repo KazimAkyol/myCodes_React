@@ -7,8 +7,8 @@ const APP_KEY = "43faeee790f26cd82b28050d3031619d";
 
 export const RecipeContext = createContext();
 
-const RecipeProvider = ({children}) => {
-  //! Home, header, recipecard da gerekli olan veriler
+const RecipeProvider = ({ children }) => {
+  //! Home, header, recipecard da gerekli olan veriler:
 
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("");
@@ -18,13 +18,17 @@ const RecipeProvider = ({children}) => {
 
   //! Diger bölümlerde kullanilacak degiskenler:
 
-  const [name, setName]=useState(localStorage.getItem("username") || "")
+  const [name, setName] = useState(localStorage.getItem("username") || "");
 
-  const [password, setPassword]=useState(localStorage.getItem("password") || "")
+  const [password, setPassword] = useState(
+    localStorage.getItem("password") || ""
+  );
 
-  return <RecipeContext.Provider>
-  {children}
-  </RecipeContext.Provider>;
+  return (
+    <RecipeContext.Provider value={{ name, setName, password, setPassword }}>
+      {children}
+    </RecipeContext.Provider>
+  );
 };
 
 export default RecipeProvider;

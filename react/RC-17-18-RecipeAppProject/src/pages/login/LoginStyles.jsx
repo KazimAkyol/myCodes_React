@@ -1,5 +1,4 @@
-import styled from "styled-components"
-
+import styled from "styled-components";
 
 export const LoginContainer = styled.div`
   /* resmin olduğu en dış div */
@@ -10,11 +9,10 @@ export const LoginContainer = styled.div`
   background-size: cover;
   background-position: center;
 
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 `;
-
 
 export const FormContainer = styled.div`
   /* yuvarlak yer */
@@ -31,14 +29,12 @@ export const FormContainer = styled.div`
   flex-direction: column;
 `;
 
-
 export const StyledImg = styled.img`
   /* yuvarlağın içindeki üstteki küçük resim */
 
   width: 150px;
   margin: 1rem;
 `;
-
 
 export const Header = styled.h1`
   /* clarusway başlığı yazan yer */
@@ -79,5 +75,3 @@ export const StyledButton = styled.button`
   cursor: pointer;
   margin: 1rem;
 `;
-
-
