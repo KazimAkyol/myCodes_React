@@ -1,5 +1,4 @@
 import React from "react";
-
 import AnaUser from "./AnaUser";
 import { useContext } from "react";
 import { KullaniciContext } from "../context/KullaniciProvider";
