@@ -18,10 +18,10 @@ const RecipeProvider = ({ children }) => {
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
   const getData = async () => {
-    const data = await axios.get(url);
+    const { data } = await axios.get(url);
+    console.log(data.hits);
+    setRecipes(data.hits);
   };
-
-  getData();
 
   //! Diger bölümlerde kullanilacak degiskenler:
 
@@ -42,6 +42,9 @@ const RecipeProvider = ({ children }) => {
         setQuery,
         mealType,
         setMealType,
+        getData,
+        recipes,
+        setRecipes,
       }}
     >
       {children}
