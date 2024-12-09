@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
-const APP_ID = "bfbb3efc";
-const APP_KEY = "43faeee790f26cd82b28050d3031619d";
+const APP_ID = "58c5091b";
+const APP_KEY = "9ced208298cb1fd453c44d6655f88efb";
 
 //!context alanı create edelim:
 
