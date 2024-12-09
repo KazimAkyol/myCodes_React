@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import axios from "axios";
 
 const APP_ID = "58c5091b";
 const APP_KEY = "9ced208298cb1fd453c44d6655f88efb";
@@ -16,6 +17,12 @@ const RecipeProvider = ({ children }) => {
 
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
+  const getData = async () => {
+    const data = await axios.get(url);
+  };
+
+  getData();
+
   //! Diger bölümlerde kullanilacak degiskenler:
 
   const [name, setName] = useState(localStorage.getItem("username") || "");
@@ -25,7 +32,18 @@ const RecipeProvider = ({ children }) => {
   );
 
   return (
-    <RecipeContext.Provider value={{ name, setName, password, setPassword }}>
+    <RecipeContext.Provider
+      value={{
+        name,
+        setName,
+        password,
+        setPassword,
+        query,
+        setQuery,
+        mealType,
+        setMealType,
+      }}
+    >
       {children}
     </RecipeContext.Provider>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Button,
   FoodInput,
@@ -7,28 +7,25 @@ import {
   MainHeader,
   Select,
 } from "./HeaderStyles";
-
+import { RecipeContext } from "../../context/RecipeProvider";
 
 const Header = () => {
- 
+  const { setQuery } = useContext(RecipeContext);
 
   return (
     <HeaderContainer>
       <MainHeader>FOOD APP</MainHeader>
 
-      <FormContainer >
+      <FormContainer>
         <FoodInput
           type="text"
           placeholder="search"
+          onChange={(e) => setQuery(e.target.value)}
         />
 
         <Button type="submit"> Search</Button>
 
-        <Select
-          name="ogunTypes"
-          id="ogunTypes"
-         
-        >
+        <Select name="ogunTypes" id="ogunTypes">
           <option value="Breakfast">Breakfast</option>
           <option value="Lunch">Lunch</option>
           <option value="Teatime">TeaTime</option>
