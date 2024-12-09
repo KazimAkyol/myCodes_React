@@ -12,7 +12,11 @@ const Isimler = () => {
 
   return (
     <div>
-   
+   {users.slice(0,4).map((i)=>(
+    <div style={{background:"pink", textAlign:"center"}}>
+    {i.login}
+    </div>
+   ))}
 
    <AnaUser/>
 
