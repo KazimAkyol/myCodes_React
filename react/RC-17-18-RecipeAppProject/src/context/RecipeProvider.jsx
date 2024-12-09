@@ -19,7 +19,7 @@ const RecipeProvider = ({ children }) => {
 
   const getData = async () => {
     const { data } = await axios.get(url);
-    console.log(data.hits);
+    // console.log(data.hits);
     setRecipes(data.hits);
   };
 
