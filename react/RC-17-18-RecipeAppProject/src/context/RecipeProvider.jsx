@@ -17,12 +17,6 @@ const RecipeProvider = ({ children }) => {
 
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
-  const getData = async () => {
-    const { data } = await axios.get(url);
-    // console.log(data.hits);
-    setRecipes(data.hits);
-  };
-
   //! Diger bölümlerde kullanilacak degiskenler:
 
   const [name, setName] = useState(localStorage.getItem("username") || "");
@@ -30,6 +24,32 @@ const RecipeProvider = ({ children }) => {
   const [password, setPassword] = useState(
     localStorage.getItem("password") || ""
   );
+
+  //! Verinin cekildigi bölüm:
+
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const getData = async () => {
+    setLoading(true);
+    try {
+      const { data } = await axios.get(url);
+      // console.log(data.hits);
+      setRecipes(data.hits);
+    } catch (error) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (error) {
+    return <p>Something went wrong</p>;
+  }
+
+  if (loading) {
+    return <p>...LOADING...</p>;
+  }
 
   return (
     <RecipeContext.Provider
