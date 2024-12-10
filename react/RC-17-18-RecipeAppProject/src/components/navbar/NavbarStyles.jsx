@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-
-
 export const Nav = styled.div`
   /* SALMON olan navbar */
   padding: 0 2rem;
@@ -32,9 +30,9 @@ export const Menu = styled.div`
 
     width: 100%;
     /* hamburgere tıklanınca true olan props sayesinde görün, false olunca görünme */
-    display: ${({osman})=>osman===true? "flex" : "none"};
+    display: ${({ ackapa }) => (ackapa === true ? "flex" : "none")};
   }
- 
+
   a {
     padding: 1rem 2rem;
     cursor: pointer;
@@ -94,12 +92,10 @@ export const Logo = styled(MenuLink)`
   color: #393e46;
   /* text-decoration: none; */
   font-weight: 800;
- 
- 
+
   span {
-   
     font-weight: 400;
-   
+
     color: #00adb5;
   }
 `;
