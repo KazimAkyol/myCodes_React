@@ -11,6 +11,7 @@ import dietSvg from "../../assets/diet.svg";
 import { useLocation } from "react-router-dom";
 import { RecipeContext } from "../../context/RecipeProvider";
 import diet from "../../assets/diet.svg";
+
 const Details = () => {
   const {
     state: { recipe },
