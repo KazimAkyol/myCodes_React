@@ -4,7 +4,7 @@ import axios from "axios";
 const APP_ID = "58c5091b";
 const APP_KEY = "9ced208298cb1fd453c44d6655f88efb";
 
-//!context alanı create edelim:
+//! context alanı create edelim:
 
 export const RecipeContext = createContext();
 

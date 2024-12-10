@@ -17,7 +17,7 @@ const RecipeCard = () => {
         <Cards key={index}>
           <RecipeHeader>{recipe.label}</RecipeHeader>
           <RecipeImage src={recipe.image} />
-          <RecipeButton>Details</RecipeButton>
+          <RecipeButton onClick={()=>navigate("/details"), (state:{recipes})} >Details</RecipeButton>
         </Cards>
       ))}
     </MainContainer>
