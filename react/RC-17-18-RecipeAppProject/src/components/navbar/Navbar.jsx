@@ -22,7 +22,7 @@ const Navbar = () => {
         <a href="https://www.github.com" target="blank">
           GITHUB
         </a>
-        <MenuLink to="/login">LOGOUT</MenuLink>
+        <MenuLink to="/">LOGOUT</MenuLink>
       </Menu>
     </Nav>
   );

@@ -8,6 +8,7 @@ import PrivateRouter from "./PrivateRouter";
 import Details from "../pages/details/Details";
 import Home from "./../pages/home/Home";
 import NotFound from "./../pages/errorPage/NotFound";
+import About from "../pages/about/About";
 
 const AppRouter = () => {
   return (
@@ -16,6 +17,8 @@ const AppRouter = () => {
 
       <Routes>
         <Route path="/" element={<Login />} />
+
+        <Route path="/about" element={<About />} />
 
         {/* şifre kontrolü için private router'i gönderme */}
         <Route path="/home" element={<PrivateRouter />}>
