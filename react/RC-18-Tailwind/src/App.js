@@ -1,5 +1,6 @@
 import "./App.css";
 import HoverFocus from "./components/HoverFocus";
+import Responsive from "./components/Responsive";
 import Sizing from "./components/Sizing";
 import Typograghy from "./components/Typograghy";
 
@@ -10,7 +11,9 @@ function App() {
 
       {/* <Sizing /> */}
 
-      <HoverFocus />
+      {/* <HoverFocus /> */}
+
+      <Responsive />
     </div>
   );
 }
