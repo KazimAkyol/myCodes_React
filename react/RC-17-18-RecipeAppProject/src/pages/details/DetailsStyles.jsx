@@ -28,7 +28,6 @@ export const DetailPart = styled.div`
   /* height: calc(100vh - 300px); */
   @media (max-width: 1250px) {
     justify-content: center;
-
     border: 1px solid red;
   }
 `;
@@ -36,7 +35,6 @@ export const DetailPart = styled.div`
 export const ImgContainer = styled.div`
   /* resmin div i */
   background-color: green;
-
   border: 1px solid #00adb5;
   padding: 10px;
   border-radius: 3px;
@@ -51,10 +49,11 @@ export const ImgContainer = styled.div`
 
 export const HeaderContainer = styled.div`
   /* üstteki başlık ve kadın resmi */
-  background-color: darkgray;
+  /* background-color: darkgray; */
 
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   margin: 25px;
   font-size: 3rem;
   h1 {
@@ -70,13 +69,12 @@ export const IngredContainer = styled.div`
   width: 400px;
   font-size: 1.4rem;
   margin: 2rem;
-  background-color: gray;
+  /* background-color: gray; */
 `;
 
 export const OtherPart = styled.div`
   /* üstteki bilgiler */
   background-color: lightgray;
-
   width: 400px;
   text-align: right;
   font-size: 1.8rem;

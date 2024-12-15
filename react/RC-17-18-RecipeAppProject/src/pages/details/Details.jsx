@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   DetailContainer,
   DetailPart,
@@ -7,16 +7,14 @@ import {
   IngredContainer,
   OtherPart,
 } from "./DetailsStyles";
-import dietSvg from "../../assets/diet.svg";
 import { useLocation } from "react-router-dom";
-import { RecipeContext } from "../../context/RecipeProvider";
 import diet from "../../assets/diet.svg";
 
 const Details = () => {
   const {
     state: { recipe },
   } = useLocation();
-  console.log(recipe);
+  // console.log(recipe);
 
   return (
     <DetailContainer>
@@ -39,13 +37,11 @@ const Details = () => {
             {recipe.totalNutrients.CHOCDF.unit}
           </span>
           <span>
-            {" "}
             {recipe.totalNutrients.CHOLE.label}:
             {Math.round(recipe.totalNutrients.CHOLE.quantity)}
             {recipe.totalNutrients.CHOLE.unit}
           </span>
           <span>
-            {" "}
             {recipe.totalNutrients.ENERC_KCAL.label}:
             {Math.round(recipe.totalNutrients.ENERC_KCAL.quantity)}
             {recipe.totalNutrients.ENERC_KCAL.unit}

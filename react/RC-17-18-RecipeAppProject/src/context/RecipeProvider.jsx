@@ -25,10 +25,10 @@ const RecipeProvider = ({ children }) => {
     localStorage.getItem("password") || ""
   );
 
-  //! Verinin cekildigi bölüm:
-
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  //! Verinin cekildigi bölüm:
 
   const getData = async () => {
     setLoading(true);

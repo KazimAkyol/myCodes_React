@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const RecipeCard = () => {
   const { recipes } = useContext(RecipeContext);
+  
   const navigate = useNavigate();
 
   return (
