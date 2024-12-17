@@ -17,6 +17,7 @@ export const Nav = styled.div`
 
 export const Menu = styled.div`
   /* navbardaki 3 kelime about ...hepsini içine alan sarmalın (kutunun ) özellikleri*/
+  
   background: #e1f1dd;
   display: flex;
   justify-content: center;

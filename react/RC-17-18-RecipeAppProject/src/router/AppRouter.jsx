@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../pages/login/Login";
-
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import PrivateRouter from "./PrivateRouter";
@@ -18,8 +17,6 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Login />} />
 
-        <Route path="/about" element={<About />} />
-
         {/* şifre kontrolü için private router'i gönderme */}
         <Route path="/home" element={<PrivateRouter />}>
           <Route path="" element={<Home />} />
@@ -28,6 +25,8 @@ const AppRouter = () => {
         <Route path="/details" element={<Details />} />
 
         <Route path="*" element={<NotFound />} />
+
+        <Route path="/about" element={<About />} />
       </Routes>
 
       <Footer />

@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <Logo to="/home">
+      <Logo to="/">
         {"<Clarusway/>"} <span>Recipe</span>
       </Logo>
 
@@ -16,13 +16,14 @@ const Navbar = () => {
       </Hamburger>
 
       <Menu ackapa={open} onClick={() => setOpen(!open)}>
-        <MenuLink to="/about">ABOUT</MenuLink>
+        <MenuLink to="/about">About</MenuLink>
 
-        {/* <MenuLink to="/">GITHUB</MenuLink> */}
+        {/* Dışarıdaki harici bir sayfaya Link ile gidemem, o yüzden Menulink kullanmıyoruz */}
+        {/* <MenuLink to="/">Github</MenuLink> */}
         <a href="https://www.github.com" target="blank">
-          GITHUB
+          Github
         </a>
-        <MenuLink to="/">LOGOUT</MenuLink>
+        <MenuLink to="/">Logout</MenuLink>
       </Menu>
     </Nav>
   );

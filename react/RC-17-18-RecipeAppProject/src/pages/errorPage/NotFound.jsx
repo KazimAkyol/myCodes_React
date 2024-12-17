@@ -26,7 +26,7 @@ const NotFound = () => {
       <h3>Something went wrong</h3>
       <p>
         Within <strong>{counter}</strong> seconds, you will be directed to the
-        home page!
+        Home page!
       </p>
     </Main>
   );
