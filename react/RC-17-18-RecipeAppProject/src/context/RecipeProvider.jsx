@@ -25,16 +25,16 @@ const RecipeProvider = ({ children }) => {
     localStorage.getItem("password") || ""
   );
 
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
-
   //! Verinin cekildigi bölüm:
+
+  const [error, setError] = useState(false);
+
+  const [loading, setLoading] = useState(false);
 
   const getData = async () => {
     setLoading(true);
     try {
       const { data } = await axios.get(url);
-      // console.log(data.hits);
       setRecipes(data.hits);
     } catch (error) {
       setError(true);
