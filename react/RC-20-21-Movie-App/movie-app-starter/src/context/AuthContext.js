@@ -1,4 +1,8 @@
-import React from 'react'
+import React, { createContext } from 'react'
+
+
+//! context alani create edelim:
+export const YetkiContext = createContext()
 
 const AuthContext = () => {
   return (
