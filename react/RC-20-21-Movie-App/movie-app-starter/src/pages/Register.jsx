@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon";
 
 const Register = () => {
-
-    
-
-
-
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
 
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
@@ -23,6 +22,7 @@ const Register = () => {
               class=" peer"
               placeholder=" "
               required
+              onChange={() => setFirstName(email.target.value)}
             />
             <label htlmFor="floating_text" className="">
               First Name
@@ -35,6 +35,7 @@ const Register = () => {
               name="floating_text"
               type="text"
               required
+              onChange={() => setLastName(email.target.value)}
             />
             <label htmlFor="floating_text">Last Name</label>
           </div>
@@ -45,6 +46,7 @@ const Register = () => {
               name="floating_email"
               type="email"
               required
+              onChange={() => setEmail(email.target.value)}
             />
             <label htmlFor="floating_email">Email</label>
           </div>
@@ -55,6 +57,7 @@ const Register = () => {
               name="floating_password"
               type="password"
               required
+              onChange={() => setPassword(email.target.value)}
             />
             <label htmlFor="floating_password">Password</label>
           </div>
