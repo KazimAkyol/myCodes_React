@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon";
+import { YetkiContext } from "../context/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  const { login } = useContext(YetkiContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    //? daha önce register (kayıt) olduğumuz email password ile siteye giriş yapma firebase metodu:
+    login();
+  };
+
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
       <div className={`form-container mt-[5vh] w-[380px] h-[580px]`}>
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2 className="text-red-main text-2xl font-[500] text-center tracking-[0.1em] mb-3">
             Sign In
           </h2>
