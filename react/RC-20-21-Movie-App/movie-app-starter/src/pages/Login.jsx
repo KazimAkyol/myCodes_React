@@ -50,7 +50,7 @@ const Login = () => {
           <button
             type="button"
             className="btn-danger flex justify-between text-center"
-            onClick={() => signUpGooglE}
+            onClick={() => signUpGooglE()}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />
