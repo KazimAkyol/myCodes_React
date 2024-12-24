@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { FilmContext } from "../context/MovieContext";
+import MovieCard from "../components/MovieCard";
 
 const Main = () => {
-  return (
-    <div>Main</div>
-  )
-}
+  const { filmler } = useContext(FilmContext);
 
-export default Main
+  // console.log(filmler)
+  return (
+    <div className="flex justify-center flex-wrap">
+      {filmler.map((film) => (
+        <MovieCard />
+      ))}
+    </div>
+  );
+};
+
+export default Main;

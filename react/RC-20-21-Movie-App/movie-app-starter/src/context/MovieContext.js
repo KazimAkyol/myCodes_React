@@ -20,7 +20,6 @@ const MovieContext = ({ children }) => {
   useEffect(() => {
     getirMovies();
   }, []);
-  //
 
   return (
     <FilmContext.Provider value={{ filmler }}>{children}</FilmContext.Provider>
