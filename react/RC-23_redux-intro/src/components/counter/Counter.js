@@ -3,14 +3,13 @@ import "./Counter.css";
 
 const Counter = () => {
   // değişkenler useSelector hookuyla getirilir
-  const { yazi, sayac } = useSelector((state) => state.counterReducer);
 
   return (
     <div className="app">
       <h2 className="counter-header"> Counter with Redux</h2>
-      <h1>{sayac} </h1>
+      <h1></h1>
       {/* sayac */}
-      <h2>{yazi} </h2>
+      <h2></h2>
       {/* yazi */}
       <div>
         <button
@@ -22,7 +21,7 @@ const Counter = () => {
 
         <button
           className="counter-button zero"
-          //  sıfırla fonksiyonu
+          // sıfırla fonksiyonu
         >
           RESET
         </button>
