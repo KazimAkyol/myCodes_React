@@ -1,18 +1,16 @@
-
 import { useSelector } from "react-redux";
 import "./Counter.css";
 
 const Counter = () => {
-
-// değişkenler useSelector hookuyla getirilir
-const{yazi,sayac}=useSelector((state)=>state.counterReducer)
+  // değişkenler useSelector hookuyla getirilir
+  const { yazi, sayac } = useSelector((state) => state.counterReducer);
 
   return (
     <div className="app">
       <h2 className="counter-header"> Counter with Redux</h2>
-      <h1>{ sayac} </h1>
+      <h1>{sayac} </h1>
       {/* sayac */}
-      <h2>{yazi } </h2>
+      <h2>{yazi} </h2>
       {/* yazi */}
       <div>
         <button
@@ -24,19 +22,19 @@ const{yazi,sayac}=useSelector((state)=>state.counterReducer)
 
         <button
           className="counter-button zero"
-        //  sıfırla fonksiyonu
+          //  sıfırla fonksiyonu
         >
           RESET
         </button>
         <button
           className="counter-button negative"
-      // azaltıldı fonksiyonu
+          // azaltıldı fonksiyonu
         >
           AZALT
         </button>
       </div>
     </div>
   );
-}
+};
 
-export default Counter
+export default Counter;
