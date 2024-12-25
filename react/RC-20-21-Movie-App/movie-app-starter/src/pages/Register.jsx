@@ -14,7 +14,10 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    createKullanici(email, password);
+    //? Navbarda firstname, lastname bastırmak istiyoruz, bunlar google'la giriş yapıldığında displayName olarak geçiyor, kendimiz giriş yaptığımızda da aynı ismi verelim, Navbarda displayName deyince basılmış olsun diye:
+    const displayName = `${firstName} ${lastName}`;
+
+    createKullanici(email, password, displayName);
   };
 
   return (
