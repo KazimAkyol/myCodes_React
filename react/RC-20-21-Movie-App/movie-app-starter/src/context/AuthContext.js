@@ -40,7 +40,7 @@ const AuthContext = ({ children }) => {
 
       navigate("/");
 
-      //? UserTakip'ten sonra kullanıcı profilini güncellemek için kullanılan firebase metodu, login logout da userTakip sayesinde güncelleniyor ama register da isim güncellemesi yok, o da bu şekilde oluyor.Alttakini yazmazsam (register ile girdiğimde) navbarda displayName i göremem. Alttakini yazmazsam sadece google ile girersem görürüm.
+      //? UserTakip'ten sonra kullanıcı profilini güncellemek için kullanılan firebase metodu, login logout da userTakip sayesinde güncelleniyor ama register da isim güncellemesi yok, o da bu şekilde oluyor, alttakini yazmazsam (register ile girdiğimde) navbarda displayName i göremem. Alttakini yazmazsam sadece google ile girersem görürüm.
 
       await updateProfile(auth.currentUser, { displayName: displayName });
     } catch (error) {
