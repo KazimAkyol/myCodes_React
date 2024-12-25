@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../auth/firebase";
 import { errorToast, successToast } from "../helpers/ToastNotify";
@@ -30,7 +31,7 @@ const AuthContext = ({ children }) => {
   //! register için (sitede zincir yapılı fetch işlemi var biz burada async await i tercih ettik)
   // https://firebase.google.com/docs/auth/web/start?hl=tr
 
-  const createKullanici = async (email, password) => {
+  const createKullanici = async (email, password, displayName) => {
     try {
       //? sitede ilk defa kullanıcı adı oluşturmak için kullanılan firebase metodu:
       await createUserWithEmailAndPassword(auth, email, password);
@@ -38,6 +39,10 @@ const AuthContext = ({ children }) => {
       successToast("Kayit basarili");
 
       navigate("/");
+
+      //? UserTakip'ten sonra kullanıcı profilini güncellemek için kullanılan firebase metodu, login logout da userTakip sayesinde güncelleniyor ama register da isim güncellemesi yok, o da bu şekilde oluyor.Alttakini yazmazsam (register ile girdiğimde) navbarda displayName i göremem. Alttakini yazmazsam sadece google ile girersem görürüm.
+
+      await updateProfile(auth.currentUser, { displayName: displayName });
     } catch (error) {
       errorToast(error.message);
     }
