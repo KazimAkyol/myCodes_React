@@ -9,7 +9,7 @@ const Main = () => {
   return (
     <div className="flex justify-center flex-wrap">
       {filmler.map((film) => (
-        <MovieCard {...film} />
+        <MovieCard key={film.id} {...film} />
       ))}
     </div>
   );

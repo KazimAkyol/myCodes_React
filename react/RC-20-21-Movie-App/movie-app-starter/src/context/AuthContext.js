@@ -4,6 +4,7 @@ import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import { auth } from "../auth/firebase";
 import { errorToast, successToast } from "../helpers/ToastNotify";
@@ -63,8 +64,18 @@ const AuthContext = ({ children }) => {
     });
   };
 
+  //! siteden cikis
+
+  const cikis = () => {
+    signOut(auth);
+
+    successToast("cikis basarili");
+  };
+
   return (
-    <YetkiContext.Provider value={{ createKullanici, login, signUpGooglE }}>
+    <YetkiContext.Provider
+      value={{ createKullanici, login, signUpGooglE, cikis }}
+    >
       {children}
     </YetkiContext.Provider>
   );
