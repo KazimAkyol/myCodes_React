@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import "./Counter.css";
 
 const Counter = () => {
-  // değişkenler useSelector hookuyla getirilir
+  // değişkenler useSelector hookuyla getirilir:
 
   return (
     <div className="app">
