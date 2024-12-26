@@ -3,6 +3,7 @@
 import TodoItem from "./TodoItem";
 
 const TodoList = () => {
+    // ekrana basılacak dizi reducers dan gelsin
 
 
 

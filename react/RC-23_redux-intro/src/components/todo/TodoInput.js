@@ -2,6 +2,11 @@
 
 
 const TodoInput = () => {
+    // inputtan gelen veriyi taşıması için useState:
+
+
+
+     // submit fonksiyonu reducers dan gelsin:
 
 
 
