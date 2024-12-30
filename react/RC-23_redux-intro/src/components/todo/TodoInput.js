@@ -1,8 +1,10 @@
+import { useState } from "react";
 
 
 
 const TodoInput = () => {
     // inputtan gelen veriyi taşıması için useState:
+    const [inputVeri, setInput] = useState("")
 
 
 

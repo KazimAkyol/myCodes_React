@@ -3,20 +3,20 @@ import okLogo from "../../assets/ok.png";
 import deleteLogo from "../../assets/delete.png";
 
 
-const TodoItem = () => {
+const TodoItem = ({gorev}) => {
 
 
 
   return (
     <div
       style={{
-        textDecoration:  "line-through",
-        background: "#A9A9A9",
+        textDecoration: gorev.bittiMi===true ?  "line-through": "none" ,
+        background: gorev.bittiMi ? "#A9A9A9" : "orange",
         borderRadius: "5px",
       }}
       className="todo-list"
     >
-      <h2 className="todoText">{}</h2>
+      <h2 className="todoText">{gorev.yapilacak}</h2>
       <div>
         <span>
           <img
