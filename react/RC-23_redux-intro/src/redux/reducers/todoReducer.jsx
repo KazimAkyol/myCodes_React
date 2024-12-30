@@ -8,6 +8,19 @@ const ilkDeger = {
   ],
 };
 
-const todoReducer = (state = ilkDeger, { type, payload }) => {};
+const todoReducer = (state = ilkDeger, { type, payload }) => {
+  switch (type) {
+    case "EKLE":
+      return {
+        gorevler: [
+          ...state.gorevler,
+          { id: 3, yapilacak: payload, bittiMi: false },
+        ],
+      };
+
+    default:
+      break;
+  }
+};
 
 export default todoReducer;

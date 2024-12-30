@@ -1,1 +1,1 @@
-export const ekle = (inputData) => ({type;"EKLE", payload: inputData })
+export const ekle = (inputData) => ({ type: "EKLE", payload: inputData });
