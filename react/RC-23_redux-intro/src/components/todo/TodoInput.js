@@ -9,15 +9,18 @@ const TodoInput = () => {
 
 
      // submit fonksiyonu reducers dan gelsin:
-
+const handleSubmit=(e)=>{
+    e.preventDefault()
+}
 
 
   return (
-    <form >
+    <form onSubmit={handleSubmit} >
       <input
         className="todo-input"
         type="text"
         placeholder="Add Todo"
+        onChange={(e)=>setInput(e.target.value)}
 
       />
       <button type="submit" className="add-button">

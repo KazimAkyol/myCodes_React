@@ -1,0 +1,1 @@
+export const ekle = (inputData) => ({type;"EKLE", payload: inputData })
