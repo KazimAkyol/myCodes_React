@@ -2,18 +2,15 @@ import React from "react";
 import okLogo from "../../assets/ok.png";
 import deleteLogo from "../../assets/delete.png";
 import { useDispatch } from "react-redux";
+import { sil } from "../../redux/actions/todoActions";
 
-
-const TodoItem = ({gorev}) => {
-
-    const dispatch = useDispatch()
-
-
+const TodoItem = ({ gorev }) => {
+  const dispatch = useDispatch();
 
   return (
     <div
       style={{
-        textDecoration: gorev.bittiMi===true ?  "line-through": "none" ,
+        textDecoration: gorev.bittiMi === true ? "line-through" : "none",
         background: gorev.bittiMi ? "#A9A9A9" : "orange",
         borderRadius: "5px",
       }}
@@ -26,9 +23,7 @@ const TodoItem = ({gorev}) => {
             src={okLogo}
             className="ok-logo"
             alt="ok logo"
-           
-
-           
+            onClick={() => dispatch(degistir(gorev.id))}
           />
         </span>
         <span>
@@ -36,7 +31,7 @@ const TodoItem = ({gorev}) => {
             src={deleteLogo}
             className="delete-logo"
             alt="delete logo"
-            onClick={()=>dispatch(sil(gorev))}
+            onClick={() => dispatch(sil(gorev))}
           />
         </span>
       </div>
