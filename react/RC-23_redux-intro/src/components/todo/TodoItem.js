@@ -36,7 +36,7 @@ const TodoItem = ({gorev}) => {
             src={deleteLogo}
             className="delete-logo"
             alt="delete logo"
-            onClick={()=>dispatch(sil())}
+            onClick={()=>dispatch(sil(gorev))}
           />
         </span>
       </div>

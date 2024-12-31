@@ -18,6 +18,9 @@ const todoReducer = (state = ilkDeger, { type, payload }) => {
         ],
       };
 
+    case "SIL":
+      return { gorevler: state.gorevler.filter((olay) => olay !== payload) };
+
     default:
       break;
   }
