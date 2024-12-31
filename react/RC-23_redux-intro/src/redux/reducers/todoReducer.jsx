@@ -21,6 +21,13 @@ const todoReducer = (state = ilkDeger, { type, payload }) => {
     case "SIL":
       return { gorevler: state.gorevler.filter((olay) => olay !== payload) };
 
+    case "CHANGE":
+      return {
+        gorevler: state.gorevler.map((a) =>
+          a.id === payload ? { ...a, bittiMi: !a.bittiMi } : a
+        ),
+      };
+
     default:
       break;
   }
