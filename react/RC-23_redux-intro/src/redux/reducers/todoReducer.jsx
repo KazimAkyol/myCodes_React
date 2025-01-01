@@ -29,7 +29,7 @@ const todoReducer = (state = ilkDeger, { type, payload }) => {
       };
 
     default:
-      break;
+      return state;
   }
 };
 
