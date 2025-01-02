@@ -29,7 +29,7 @@ const Login = () => {
         {/* noValidate=doğrulanmasın
         autocomplete=Otomatik Tamamlama listesi, siz yazmaya başladığınızda adlara ve e-posta adreslerine ilişkin önerileri görüntüleyen bir özelliktir. Bu öneriler, gönderdiğiniz e-posta mesajlarındaki ad ve e-posta adresleri listesindeki olası eşleşmelerdir.
          */}
-        <Box component="form" sx={{ mt: 1 }}>
+        <Box noValidate component="form" sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required
@@ -40,8 +40,18 @@ const Login = () => {
             autoComplete="email"
             autoFocus
           />
-          <TextField />
-          <Button>Sign In</Button>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="password"
+            label="Password"
+            name="password"
+            type="password"
+          />
+          <Button type="submit" fullWidth variant="contained" color="secondary">
+            Sign In
+          </Button>
         </Box>
       </Box>
     </Container>
