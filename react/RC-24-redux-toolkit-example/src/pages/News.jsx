@@ -7,6 +7,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+
 const News = () => {
   return (
     <div>
@@ -26,8 +27,8 @@ const News = () => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          <Button size="small">Clear</Button>
+          <Button size="small">Details</Button>
         </CardActions>
       </Card>
     </div>
