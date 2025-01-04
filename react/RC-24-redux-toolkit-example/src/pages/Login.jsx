@@ -7,9 +7,13 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Login = () => {
-     // 2 değişkene email, password getImageListItemBarUtilityClass, bir tane de kullanıcı oluşturan fonksiyona(submit)
+  // 2 değişkene email, password getImageListItemBarUtilityClass, bir tane de kullanıcı oluşturan fonksiyona(submit)
+
+  let { email, password } = useSelector((state) => state.yetkiSlice);
+
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -40,6 +44,7 @@ const Login = () => {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(e) => (email = e.target.value)}
           />
           <TextField
             margin="normal"
@@ -49,6 +54,7 @@ const Login = () => {
             label="Password"
             name="password"
             type="password"
+            onChange={(e) => (password = e.target.value)}
           />
           <Button type="submit" fullWidth variant="contained" color="secondary">
             Sign In
