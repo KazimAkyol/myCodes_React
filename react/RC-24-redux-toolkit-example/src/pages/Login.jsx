@@ -9,6 +9,7 @@ import {
 import React from "react";
 
 const Login = () => {
+     // 2 değişkene email, password getImageListItemBarUtilityClass, bir tane de kullanıcı oluşturan fonksiyona(submit)
   return (
     <Container component="main" maxWidth="xs">
       <Box
