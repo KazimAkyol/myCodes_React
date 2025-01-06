@@ -44,12 +44,15 @@ const Register = () => {
             Register
           </Typography>
 
-          <Box sx={{ textAlign: "center", mt: 2, color:"secondary.main" }}>
+          {/* /* -------------------------------------------------------------------------- */}
+          {/* {{FORMIK YAPISI}} */}
+
+          <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
             <Link to="/">Already have an account? Sign in</Link>
           </Box>
         </Grid>
 
-    <AuthImage image={image} />
+        <AuthImage image={image} />
       </Grid>
     </Container>
   );
