@@ -7,12 +7,21 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { olusturKullanici } from "../features/yetkiSlice";
 
 const Login = () => {
   // 2 değişkene email, password getImageListItemBarUtilityClass, bir tane de kullanıcı oluşturan fonksiyona(submit)
 
   let { email, password } = useSelector((state) => state.yetkiSlice);
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(olusturKullanici({ email, password }));
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -34,7 +43,7 @@ const Login = () => {
         {/* noValidate=doğrulanmasın
         autocomplete=Otomatik Tamamlama listesi, siz yazmaya başladığınızda adlara ve e-posta adreslerine ilişkin önerileri görüntüleyen bir özelliktir. Bu öneriler, gönderdiğiniz e-posta mesajlarındaki ad ve e-posta adresleri listesindeki olası eşleşmelerdir.
          */}
-        <Box noValidate component="form" sx={{ mt: 1 }}>
+        <Box onSubmit={handleSubmit} noValidate component="form" sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required

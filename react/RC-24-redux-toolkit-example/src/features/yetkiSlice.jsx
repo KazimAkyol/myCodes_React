@@ -9,7 +9,12 @@ const yetkiSlice = createSlice({
   },
 
   reducers: {
-    olusturKullanici: (state, { payload }) => {},
+    olusturKullanici: (state, { payload }) => {
+      //   console.log(payload);
+      //   console.log(state);
+      state.email = payload.email;
+      state.password = payload.password;
+    },
   },
 });
 
