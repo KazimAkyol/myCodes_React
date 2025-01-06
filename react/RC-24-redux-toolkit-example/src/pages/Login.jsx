@@ -9,11 +9,14 @@ import {
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { olusturKullanici } from "../features/yetkiSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   // 2 değişkene email, password getImageListItemBarUtilityClass, bir tane de kullanıcı oluşturan fonksiyona(submit)
 
   let { email, password } = useSelector((state) => state.yetkiSlice);
+
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -21,6 +24,8 @@ const Login = () => {
     e.preventDefault();
 
     dispatch(olusturKullanici({ email, password }));
+
+    navigate("/");
   };
 
   return (
