@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const authSlice = createSlice({
   name: "auth",
-
+  
   initialState: {
-    currentUser: null,
     loading: false,
     error: false,
+    currentUser: null,
     token: null,
   },
   reducers: {
@@ -22,4 +22,5 @@ const authSlice = createSlice({
 });
 
 export const { fetchStart, fetchFail } = authSlice.actions;
+
 export default authSlice.reducer;
