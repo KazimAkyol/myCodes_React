@@ -10,14 +10,17 @@ const yetkiSlice = createSlice({
 
   reducers: {
     olusturKullanici: (state, { payload }) => {
-      //   console.log(payload);
-      //   console.log(state);
       state.email = payload.email;
       state.password = payload.password;
+    },
+
+    kullaniciSil: (state) => {
+      state.email = "";
+      state.password = "";
     },
   },
 });
 
-export const { olusturKullanici } = yetkiSlice.actions;
+export const { olusturKullanici, kullaniciSil } = yetkiSlice.actions;
 
 export default yetkiSlice.reducer;

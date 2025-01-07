@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 
 const PrivateRouter = () => {
-  const { email, password } = useSelector((state) => state.yetkiSlice);
+  // const { email, password } = useSelector((state) => state.yetkiSlice);
 
   //? yetkiSlice sayfasından kullanici dolu gelirse ve email=osman ise yönlendirilen sayfaya git
 
-  return email === "osman" && password === "1234" ? (
+  return useSelector((state) => state.yetkiSlice.email) === "osman" ? (
     <Outlet />
   ) : (
     <Navigate to="/login" />
