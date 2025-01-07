@@ -5,13 +5,26 @@ import LockIcon from "@mui/icons-material/Lock";
 import image from "../assets/regi.avif";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import AuthHeader from "../components/AuthHeader";
 import AuthImage from "../components/AuthImage";
 import { Formik } from "formik";
 import { TextField } from "@mui/material";
+import * as Yup from "yup";
 
 const Register = () => {
+  const SignupSchema = Yup.object().shape({
+    firstName: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    lastName: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    email: Yup.string().email("Invalid email").required("Required"),
+  });
+
   return (
     <Container maxWidth="lg">
       <Grid
@@ -57,8 +70,10 @@ const Register = () => {
               email: "",
               password: "",
             }}
-            validate={{}}
-            onSubmit={{}}
+            validationSchema={{}}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
           >
             {({
               values,
@@ -68,11 +83,39 @@ const Register = () => {
               handleBlur,
               handleSubmit,
               isSubmitting,
-            }) => {
-              <form>
-                <TextField label="outlined" variant="outlined" />
-              </form>;
-            }}
+            }) => (
+              <form onSubmit={handleSubmit}>
+                <TextField
+                  name="username"
+                  value={values.username}
+                  onChange={handleChange}
+                  label="Username"
+                  variant="outlined"
+                  fullWidth
+                  type="text"
+                  margin="normal"
+                />
+                <TextField
+                  name="password"
+                  value={values.password}
+                  onChange={handleChange}
+                  label="Password"
+                  variant="outlined"
+                  fullWidth
+                  type="password"
+                  margin="normal"
+                />
+
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  margin="normal"
+                >
+                  SUBMIT
+                </Button>
+              </form>
+            )}
           </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
