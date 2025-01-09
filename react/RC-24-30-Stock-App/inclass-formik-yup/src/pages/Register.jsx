@@ -111,6 +111,7 @@ const Register = () => {
                   type="text"
                   margin="normal"
                 />
+
                 <TextField
                   name="firstName"
                   value={values.firstName}
@@ -124,6 +125,7 @@ const Register = () => {
                   type="text"
                   margin="normal"
                 />
+
                 <TextField
                   name="lastName"
                   value={values.lastName}
@@ -137,6 +139,7 @@ const Register = () => {
                   type="text"
                   margin="normal"
                 />
+
                 <TextField
                   name="email"
                   value={values.email}
@@ -150,6 +153,7 @@ const Register = () => {
                   type="email"
                   margin="normal"
                 />
+                
                 <TextField
                   name="password"
                   value={values.password}
