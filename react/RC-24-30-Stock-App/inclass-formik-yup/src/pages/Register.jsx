@@ -11,6 +11,7 @@ import AuthImage from "../components/AuthImage";
 import { Formik } from "formik";
 import { TextField } from "@mui/material";
 import * as Yup from "yup";
+import useAuthCall from "../hook/useAuthCall";
 
 const Register = () => {
   const { register } = useAuthCall();
