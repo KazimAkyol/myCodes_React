@@ -13,6 +13,8 @@ import { TextField } from "@mui/material";
 import * as Yup from "yup";
 
 const Register = () => {
+  const { register } = useAuthCall();
+
   const SignupSchema = Yup.object().shape({
     username: Yup.string()
       .min(5, "Kullanici adi 5 karakterden az olamaz")
@@ -85,6 +87,7 @@ const Register = () => {
             validationSchema={SignupSchema}
             onSubmit={(values) => {
               console.log(values);
+              register(values);
             }}
           >
             {({
@@ -153,7 +156,7 @@ const Register = () => {
                   type="email"
                   margin="normal"
                 />
-                
+
                 <TextField
                   name="password"
                   value={values.password}
