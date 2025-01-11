@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const authSlice = createSlice({
   name: "auth",
-     
+
   initialState: {
     loading: false,
     error: false,
@@ -14,6 +14,9 @@ const authSlice = createSlice({
       state.loading = true;
       state.error = false;
     },
+    registerSuccess: (state, action) => {
+      console.log(action);
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -21,6 +24,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { fetchStart, fetchFail } = authSlice.actions;
+export const { fetchStart, fetchFail, registerSuccess } = authSlice.actions;
 
 export default authSlice.reducer;

@@ -1,6 +1,7 @@
 import React from "react";
+import axios from "axios";
 import { useDispatch } from "react-redux";
-import { fetchFail, fetchStart } from "../features/authSlice";
+import { fetchFail, fetchStart, registerSuccess } from "../features/authSlice";
 
 const useAuthCall = () => {
   const dispatch = useDispatch();
@@ -18,13 +19,14 @@ const useAuthCall = () => {
         "https://10102.fullstack.clarusway.com/users",
         userInfo
       );
-      console.log(data);
+      console.log("register icinde", data);
+      dispatch(registerSuccess(data));
     } catch (error) {
-      dispatch(fetchFail);
+      dispatch(fetchFail());
     }
   };
 
-  return <div>useAuthCall</div>;
+  return { register };
 };
 
 export default useAuthCall;
