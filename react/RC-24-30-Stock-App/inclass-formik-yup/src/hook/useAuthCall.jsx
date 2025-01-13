@@ -27,7 +27,7 @@ const useAuthCall = () => {
         userInfo
       );
       console.log("register icinde", data);
-      dispatch(loginSuccess(data));
+      dispatch(registerSuccess(data));
       navigate("/stock");
     } catch (error) {
       dispatch(fetchFail());
