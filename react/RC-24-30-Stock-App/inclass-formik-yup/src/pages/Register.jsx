@@ -5,13 +5,13 @@ import LockIcon from "@mui/icons-material/Lock";
 import image from "../assets/regi.avif";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import AuthHeader from "../components/AuthHeader";
 import AuthImage from "../components/AuthImage";
 import { Formik } from "formik";
-import { TextField } from "@mui/material";
 import * as Yup from "yup";
 import useAuthCall from "../hook/useAuthCall";
+import RegisterForm from "../components/RegisterForm";
 
 const Register = () => {
   const { register } = useAuthCall();
@@ -92,100 +92,11 @@ const Register = () => {
               // actions değeri formikden gelen metodları içerir , resetForm, setSubmitting,...
               // formun text alanlarının temizlenmesi için resetForm
               // submit işlemi bittiği için setSubmitting(false) yapıyoruz.
+              actions.resetForm();
+              actions.setSubmitting(false);
             }}
-          >
-            {({
-              values,
-              errors,
-              touched,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              isSubmitting,
-            }) => (
-              <form onSubmit={handleSubmit}>
-                <TextField
-                  name="username"
-                  value={values.username}
-                  onChange={handleChange}
-                  onBlur={handleBlur} // kullanıcının input alanından ayrıldığını yakalayan event.
-                  error={touched.username && errors.username} // validation'da verdiğimiz kalıba uymazsa ilgili mesajları göstermesi için errors dan gelen mesajı yakalıyoruz.
-                  helperText={touched.username && errors.username} // validation'da verdiğimiz kalıba uymazsa rengi errora çevirmesi için error attribute'ı benden false/true degeri bekliyor, ondan dolayı daha sağlıklı olması için boolean deger döndürüyoruz.
-                  // touched'da kullanıcının inputa tıklayıp tıklamadığını yakalıyor.
-                  label="User Name"
-                  variant="outlined"
-                  fullWidth
-                  type="text"
-                  margin="normal"
-                />
-
-                <TextField
-                  name="firstName"
-                  value={values.firstName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={touched.firstName && errors.firstName}
-                  helperText={touched.firstName && errors.firstName}
-                  label="First Name"
-                  variant="outlined"
-                  fullWidth
-                  type="text"
-                  margin="normal"
-                />
-
-                <TextField
-                  name="lastName"
-                  value={values.lastName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={touched.lastName && errors.lastName}
-                  helperText={touched.lastName && errors.lastName}
-                  label="Last Name"
-                  variant="outlined"
-                  fullWidth
-                  type="text"
-                  margin="normal"
-                />
-
-                <TextField
-                  name="email"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={touched.email && errors.email}
-                  helperText={touched.email && errors.email}
-                  label="Email"
-                  variant="outlined"
-                  fullWidth
-                  type="email"
-                  margin="normal"
-                />
-
-                <TextField
-                  name="password"
-                  value={values.password}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={touched.password && errors.password}
-                  helperText={touched.password && errors.password}
-                  label="Password"
-                  variant="outlined"
-                  fullWidth
-                  type="password"
-                  margin="normal"
-                />
-
-                <Button
-                  type="submit"
-                  variant="contained"
-                  fullWidth
-                  margin="normal"
-                >
-                  SUBMIT
-                </Button>
-              </form>
-            )}
-          </Formik>
+            component={(props) => <RegisterForm {...props} />}
+          />
 
           <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
             <Link to="/">Already have an account? Sign in</Link>

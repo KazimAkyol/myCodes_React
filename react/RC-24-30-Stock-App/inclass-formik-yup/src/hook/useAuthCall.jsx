@@ -2,9 +2,11 @@ import React from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { fetchFail, fetchStart, registerSuccess } from "../features/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const useAuthCall = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   //! Custom hook yazma kuralları:
   //? 1- use kelimesi ile başlar
@@ -21,6 +23,7 @@ const useAuthCall = () => {
       );
       console.log("register icinde", data);
       dispatch(registerSuccess(data));
+      navigate("/stock");
     } catch (error) {
       dispatch(fetchFail());
     }
