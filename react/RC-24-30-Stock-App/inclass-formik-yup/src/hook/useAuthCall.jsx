@@ -1,7 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { fetchFail, fetchStart, registerSuccess } from "../features/authSlice";
+import {
+  fetchFail,
+  fetchStart,
+  loginSuccess,
+  registerSuccess,
+} from "../features/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const useAuthCall = () => {
@@ -22,14 +27,30 @@ const useAuthCall = () => {
         userInfo
       );
       console.log("register icinde", data);
-      dispatch(registerSuccess(data));
+      dispatch(loginSuccess(data));
       navigate("/stock");
     } catch (error) {
       dispatch(fetchFail());
     }
   };
 
-  return { register };
+  const login = async (userInfo) => {
+    dispatch(fetchStart());
+
+    try {
+      const { data } = await axios.post(
+        "https://10102.fullstack.clarusway.com/auth/login",
+        userInfo
+      );
+      console.log("register icinde", data);
+      dispatch(loginSuccess(data));
+      navigate("/stock");
+    } catch (error) {
+      dispatch(fetchFail());
+    }
+  };
+
+  return { register, login };
 };
 
 export default useAuthCall;
