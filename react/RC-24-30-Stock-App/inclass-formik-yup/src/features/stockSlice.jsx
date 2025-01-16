@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const stockSilce = createSlice({
+const stockSlice = createSlice({
   name: "stock",
 
   initialState: {
@@ -21,6 +21,6 @@ const stockSilce = createSlice({
   },
 });
 
-export const { fetchStart, fetchFail } = stockSilce.actions;
+export const { fetchStart, fetchFail } = stockSlice.actions;
 
-export default stockSilce.reducer;
+export default stockSlice.reducer;
