@@ -15,6 +15,8 @@ const useAuthCall = () => {
   const navigate = useNavigate();
   const { token } = useSelector((state) => state.auth);
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   //! Custom hook yazma kuralları:
   //? 1- use kelimesi ile başlar
   //? 2- return de { fonksiyonlar }, değişkense [ bilgiler ] gönderilmeli
@@ -24,10 +26,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios.post(
-        "https://10102.fullstack.clarusway.com/users",
-        userInfo
-      );
+      const { data } = await axios.post(`${BASE_URL}users`, userInfo);
       console.log("register icinde", data);
       dispatch(registerSuccess(data));
       navigate("/stock");
@@ -40,10 +39,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios.post(
-        "https://10102.fullstack.clarusway.com/auth/login",
-        userInfo
-      );
+      const { data } = await axios.post(`${BASE_URL}auth/login`, userInfo);
       console.log("register icinde", data);
       dispatch(loginSuccess(data));
       navigate("/stock");
@@ -56,14 +52,11 @@ const useAuthCall = () => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios(
-        "https://10102.fullstack.clarusway.com/auth/logout",
-        {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
-        }
-      );
+      const { data } = await axios(`${BASE_URL}auth/logout`, {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      });
       dispatch(logoutSuccess());
       navigate("/");
     } catch (error) {
