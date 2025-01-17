@@ -3,13 +3,13 @@ import { fetchFail, fetchStart, stockSuccess } from "../features/stockSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import useAxios from "./useAxios";
+// import useAxios from "./useAxios";
 
 const useStockCall = () => {
   const dispatch = useDispatch();
   const { token } = useSelector((state) => state.auth);
   const BASE_URL = import.meta.env.VITE_BASE_URL;
-  const { axiosWithToken } = useAxios();
+//   const { axiosWithToken } = useAxios();
 
   /* -------------------------------------------------------------------------- */
   //   const getFirm = async () => {
