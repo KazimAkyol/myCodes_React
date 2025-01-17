@@ -46,7 +46,6 @@ const links = [
 const MenuListItems = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   const btnStyle = {
     color: "secondary.main",
