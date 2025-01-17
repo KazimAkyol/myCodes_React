@@ -20,7 +20,9 @@ const stockSlice = createSlice({
     },
     firmSuccess: (state, { payload }) => {
       state.firms = payload.data;
-      console.log(state.data);
+    },
+    brandSuccess: (state, { payload }) => {
+      state.brands = payload.data;
     },
   },
 });

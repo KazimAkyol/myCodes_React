@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux'
 const Firms = () => {
 
     const {getFirm}=useStockCall()
-    const {firms} = useSelector()
+    const {firms} = useSelector((state)=>state.stock)
+    console.log(firms)
 
     useEffect(()=>{
         getFirm()
