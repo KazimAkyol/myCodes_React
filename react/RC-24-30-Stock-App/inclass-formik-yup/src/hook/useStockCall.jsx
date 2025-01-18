@@ -3,7 +3,7 @@ import { fetchFail, fetchStart, stockSuccess } from "../features/stockSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import axios from "axios";
-// import useAxios from "./useAxios";
+import useAxios from "./useAxios";
 
 const useStockCall = () => {
   const dispatch = useDispatch();
