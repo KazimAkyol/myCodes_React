@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import FirmModal from "../components/Modals/FirmModal";
 
 const Firms = () => {
   const { getStockData } = useStockCall();
@@ -21,7 +22,6 @@ const Firms = () => {
       </Typography>
 
       <Button
-        onClick={handleOpen}
         sx={{
           backgroundColor: "secondary.main",
           color: "white",
@@ -37,8 +37,6 @@ const Firms = () => {
       {open && (
         <FirmModal
           open={open}
-          handleClose={handleClose}
-          initialState={initialState}
         />
       )}
       <Grid container sx={{ marginLeft: "1rem" }}>
