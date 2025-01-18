@@ -100,10 +100,7 @@ export default function FirmCard({
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton
-          aria-label="add to favorites"
-          onClick={() => getDeleteData("firms", _id)}
-        >
+        <IconButton aria-label="add to favorites">
           <DeleteOutlineIcon
             sx={{
               "&:hover": {
