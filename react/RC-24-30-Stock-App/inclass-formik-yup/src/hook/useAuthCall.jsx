@@ -9,13 +9,12 @@ import {
   registerSuccess,
 } from "../features/authSlice";
 import { useNavigate } from "react-router-dom";
+import useAxios from "./useAxios";
 
 const useAuthCall = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { token } = useSelector((state) => state.auth);
-
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const { axiosWithToken } = useAxios();
 
   //! Custom hook yazma kuralları:
   //? 1- use kelimesi ile başlar
@@ -26,7 +25,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios.post(`${BASE_URL}users`, userInfo);
+      const { data } = await axiosWithToken.get(`${BASE_URL}users`, userInfo);
       console.log("register icinde", data);
       dispatch(registerSuccess(data));
       navigate("/stock");

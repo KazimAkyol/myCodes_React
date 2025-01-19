@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -11,7 +12,11 @@ const useAxios = () => {
     },
   });
 
-  return { axiosWithToken };
+  const axiosWithoutHeader = axios.create({
+    baseUrl: import.meta.env.VITE_BASE_URL,
+  });
+
+  return { axiosWithToken, axiosWithoutHeader };
 };
 
 export default useAxios;
