@@ -11,7 +11,7 @@ import { useState } from "react";
 
 const Firms = () => {
   const { getStockData } = useStockCall();
-  // Lifting state up işlemi yapıldı.Modaldaki stateler firms sayfasına alındı.
+  // Lifting state-up işlemi yapıldı.Modaldaki stateler firms sayfasına alındı.
   const { firms } = useSelector((state) => state.stock);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);

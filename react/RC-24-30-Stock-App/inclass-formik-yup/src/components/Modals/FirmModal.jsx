@@ -44,7 +44,7 @@ export default function FirmModal({ open, handleClose, initialState }) {
 
   return (
     <div>
-      {/* Button modalı açıyor.Açma işlemi firms sayfasında NEw Firm yaptığı için burda pasif hale getirdik */}
+      {/* Button modalı açıyor.Açma işlemi firms sayfasında New Firm yaptığı için burda pasif hale getirdik */}
       {/* <Button onClick={handleOpen}>Open modal</Button> */}
       <Modal
         open={open}
