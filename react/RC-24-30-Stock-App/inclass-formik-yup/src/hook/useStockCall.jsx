@@ -103,7 +103,6 @@ const useStockCall = () => {
     dispatch(fetchStart());
 
     try {
-      console.log(info);
       const { data } = await axiosWithToken.post(`${url}${info._id}`, info);
       getStockData(url);
     } catch (error) {
