@@ -36,8 +36,8 @@ export default function BrandModal({ open, handleClose, initialState }) {
     }
   };
 
-  //useEffect didUpdate metodu tarzında çalışması. dependancy arrayde başlangıç değeri verildiğinde güncelleme yapması.
-  //  useEffect(()=>{setInfo(initialState)},[initialState])
+  // useEffect didUpdate metodu tarzında çalışması. dependancy arrayde başlangıç değeri verildiğinde güncelleme yapması.
+  // useEffect(()=>{setInfo(initialState)},[initialState])
 
   return (
     <div>
