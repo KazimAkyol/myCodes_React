@@ -18,7 +18,6 @@ export default function ProductTable() {
       field: "categoryId",
       headerName: "Category",
       width: 200,
-      // editable: true,
       valueGetter: (value) => value?.name,
     },
     {
@@ -31,19 +30,16 @@ export default function ProductTable() {
       field: "name",
       headerName: "Name",
       width: 200,
-      // editable: true,
     },
     {
       field: "quantity",
       headerName: "Stock",
       type: "number",
       width: 150,
-      // editable: true,
     },
     {
       headerName: "Actions",
       description: "This column includes actions about products",
-      // sortable: false,
       align: "center",
       headerAlign: "center",
       width: 170,

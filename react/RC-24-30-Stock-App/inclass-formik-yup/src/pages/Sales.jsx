@@ -4,14 +4,13 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
 import SalesModal from "./../components/Modals/SalesModal";
 import { useState } from "react";
 import SaleTable from "./../components/Table/SaleTable";
 
 const Sales = () => {
   const { getPurcSales } = useStockCall();
-  // Lifting state up işlemi yapıldı.Modaldaki stateler sales sayfasına alındı
+  // Lifting State-Up işlemi yapıldı.Modaldaki stateler Sales sayfasına alındı.
   const { sales } = useSelector((state) => state.stock);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
