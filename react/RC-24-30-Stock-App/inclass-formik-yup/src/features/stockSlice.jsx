@@ -7,6 +7,11 @@ const stockSlice = createSlice({
     loading: false,
     error: false,
     firms: [],
+    brands: [],
+    purchases: [],
+    categories: [],
+    products: [],
+    sales: [],
   },
 
   reducers: {
@@ -18,12 +23,6 @@ const stockSlice = createSlice({
       state.loading = false;
       state.error = true;
     },
-    // firmSuccess:(state,{payload})=>{
-    //     state.firms=payload.data
-    // },
-    // brandSuccess:(state,{payload})=>{
-    //     state.brands=payload.data
-    // },
     stockSuccess: (state, { payload: { data, url } }) => {
       // state[payload.url]=payload.data.data
       state[url] = data.data;
