@@ -26,6 +26,8 @@ const Products = () => {
     image: "",
   });
 
+  console.log(products);
+
   useEffect(() => {
     getStockData("products");
     getStockData("brands");
