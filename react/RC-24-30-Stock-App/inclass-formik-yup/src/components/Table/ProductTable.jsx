@@ -12,41 +12,41 @@ function getRowId(row) {
 export default function ProductTable() {
   const { products } = useSelector((state) => state.stock);
   const { getDeleteData } = useStockCall();
-
   const columns = [
-    { field: "_id", headerName: "ID", width: 90 },
+    { field: "_id", headerName: "ID", width: 240 },
     {
       field: "categoryId",
       headerName: "Category",
-      width: 150,
-      editable: true,
-      valueGetter: (value) => value.name,
+      width: 200,
+      // editable: true,
+      valueGetter: (value) => value?.name,
     },
     {
       field: "brandId",
       headerName: "Brand",
-      width: 150,
-      editable: true,
-      valueGetter: (value) => value.name,
+      width: 200,
+      valueGetter: (value) => value?.name,
     },
     {
       field: "name",
       headerName: "Name",
-      width: 110,
-      editable: true,
+      width: 200,
+      // editable: true,
     },
     {
       field: "quantity",
       headerName: "Stock",
       type: "number",
-      width: 110,
-      editable: true,
+      width: 150,
+      // editable: true,
     },
     {
       headerName: "Actions",
-      description: "This column has a value getter and is not sortable.",
-      sortable: false,
-      width: 100,
+      description: "This column includes actions about products",
+      // sortable: false,
+      align: "center",
+      headerAlign: "center",
+      width: 170,
       renderCell: (params) => (
         <DeleteIcon onClick={() => getDeleteData("products", params.id)} />
       ),
@@ -54,7 +54,7 @@ export default function ProductTable() {
   ];
 
   return (
-    <Box sx={{ height: 400, width: "100%" }}>
+    <Box sx={{ height: 700, width: "100%" }}>
       <DataGrid
         rows={products}
         columns={columns}
@@ -65,7 +65,7 @@ export default function ProductTable() {
             },
           },
         }}
-        pageSizeOptions={[5]}
+        pageSizeOptions={[5, 10, 15, 20]}
         checkboxSelection
         disableRowSelectionOnClick
         getRowId={getRowId}

@@ -47,8 +47,8 @@ export default function ProductsModal({ open, handleClose, initialState }) {
 
   console.log("category", category);
 
-  //useEffect didUpdate metodu tarzında çalışması. dependancy arrayde başlangıç değeri verildiğinde güncelleme yapması.
-  //  useEffect(()=>{setInfo(initialState)},[initialState])
+  // useEffect didUpdate metodu tarzında çalışması. dependancy arrayde başlangıç değeri verildiğinde güncelleme yapması.
+  // useEffect(()=>{setInfo(initialState)},[initialState])
 
   return (
     <div>
