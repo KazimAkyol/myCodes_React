@@ -6,14 +6,14 @@ const useAxios = () => {
   const { token } = useSelector((state) => state.auth);
 
   const axiosWithToken = axios.create({
-    baseUrl: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.VITE_BASE_URL,
     headers: {
-      Authorization: `Token ${token},`,
+      Authorization: `Token ${token}`,
     },
   });
 
   const axiosWithoutHeader = axios.create({
-    baseUrl: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.VITE_BASE_URL,
   });
 
   return { axiosWithToken, axiosWithoutHeader };
