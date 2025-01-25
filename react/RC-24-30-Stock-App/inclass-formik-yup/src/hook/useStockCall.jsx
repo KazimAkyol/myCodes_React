@@ -175,7 +175,7 @@ const useStockCall = () => {
         axiosWithToken("purchases"),
         axiosWithToken("sales"),
       ]);
-      //Optional Chaining ile undefined,null olan verilerden dolayı projenin sorun çıkarmasını engeller.
+      // Optional Chaining ile undefined,null olan verilerden dolayı projenin sorun çıkarmasını engeller.
       dispatch(getPurcSalesSuccess([purchases?.data?.data, sales?.data?.data]));
     } catch (error) {
       dispatch(fetchFail());
