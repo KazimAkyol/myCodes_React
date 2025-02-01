@@ -11,7 +11,9 @@ export default function KpiCard() {
   const { sales } = useSelector((state) => state.stock);
   const { purchases } = useSelector((state) => state.stock);
   const totalSales = sales.reduce((acc, item) => acc + item.amount, 0);
+
   const totalPurchases = purchases.reduce((acc, item) => acc + item.amount, 0);
+  console.log(totalPurchases);
 
   const cash = totalSales - totalPurchases;
 
@@ -33,6 +35,7 @@ export default function KpiCard() {
     },
   ];
 
+  console.log(sales);
   return (
     <>
       <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
