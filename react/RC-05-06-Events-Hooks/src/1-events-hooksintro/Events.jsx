@@ -31,7 +31,7 @@ const Events = () => {
   //? 3- Refresh force edilirse (tercih edilen bir durum olmaz)
 
   return (
-    //! jsx(react) alani
+    //! jsx(React) alani
 
     <div className="container text-center mt-4">
       <h1>INFO:{baslik}</h1>

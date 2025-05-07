@@ -10,8 +10,8 @@ import Events from "../1-events-hooksintro/Events";
 //* Hook Kullanim Kurallari:
 //* 1. İlk olarak import edilmeliler. import { useState } from "react";
 //* 2. Hook'lar üst seviyede tanimlanmalidir. Yani Hook'lar bir döngünün, kosul cümleciginin ve ic ice fonksiyonlarin icerisinde kullanilmamalidir.
-//* 3. Hook'lar sadece React Fonksiyonel componentleri icerisinde cagrilmalidir. Normal Javascript fonksiyonlari icerisinde cagrilmamalidir
-//*    (Custom hook'lar icerisinde bir hook cagrilabilir)
+//* 3. Hook'lar sadece React Fonksiyonel component'leri icerisinde cagirilmalidir. Normal Javascript fonksiyonlari icerisinde cagirilmamalidir
+//*    (Custom hook'lar icerisinde bir hook cagirilabilir)
 //?    https://react.dev/reference/react/hooks#state-hooks
 //* =============================================================
 
@@ -44,10 +44,12 @@ const Hooks = () => {
       });
     }
   };
+
   const arttir = () => {
     setSayac(sayac + 1);
     // sayac = sayac + 1;
   };
+
   return (
     <div>
       <h2>****************************</h2>
@@ -70,7 +72,7 @@ const Hooks = () => {
       <h1>**********************************</h1>
 
       <div className="text-center">
-        <h1>OBJECT İLE USESTATE KULLANIMI </h1>
+        <h1> OBJECT İLE USESTATE KULLANIMI </h1>
         <h2 className="text-danger">{kisi.isim}</h2>
         <h3 className="text-primary">{kisi.meslek}</h3>
         <h5 className="text-success">{kisi.yas}</h5>
@@ -117,7 +119,7 @@ const Hooks = () => {
 
         <button
           onClick={() => setKisi({ ...kisi, yas: 50 })}
-          className="btn btn-secondary"
+          className="btn btn-secondary m-4 p-4"
         >
           yasDegistir
         </button>
