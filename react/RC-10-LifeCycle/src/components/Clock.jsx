@@ -1,7 +1,7 @@
 //! UseEffect
-// İlk argüman bir fonksiyondur.Bu fonksiyon içinde API çağrıları, zamanlayıcı başlatma gibi işlemler gerçekleştirilir.
-// İkinci argüman olarak verilen bir bağımlılık dizisi (dependency array) sayesinde useEffect, ne zaman çalışacağını belirler.
-// Eğer dependency array verilmezse, sonsuz döngü oluşabilir, çünkü her render'da useEffect tekrar çalışır.
+//* İlk argüman bir fonksiyondur.Bu fonksiyon içinde API çağrıları, zamanlayıcı başlatma gibi işlemler gerçekleştirilir.
+//* İkinci argüman olarak verilen bir bağımlılık dizisi (dependency array) sayesinde useEffect, ne zaman çalışacağını belirler.
+//* Eğer dependency array verilmezse, sonsuz döngü oluşabilir, çünkü her render'da useEffect tekrar çalışır.
 
 import React, { useEffect, useState } from "react";
 import moment from "moment";
